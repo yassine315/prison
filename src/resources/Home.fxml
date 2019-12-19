@@ -12,7 +12,10 @@
          <children>
             <MenuBar>
               <menus>
-                <Menu mnemonicParsing="false" onAction="#prisonnier" text="Prisonnier" />
+                <Menu mnemonicParsing="false" text="Prisonnier">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#prisonnier" text="Prisonniers" />
+                     </items></Menu>
                 <Menu mnemonicParsing="false" onAction="#visite" text="Visite" />
                 <Menu mnemonicParsing="false" text="Formation">
                      <items>
