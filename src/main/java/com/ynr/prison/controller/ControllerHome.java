@@ -62,10 +62,6 @@ public class ControllerHome implements Initializable {
 		newContainer.prefHeightProperty().bind(container.heightProperty());
 		newContainer.prefWidthProperty().bind(container.widthProperty());
 		
-	
-		
-	
-		
 		
 	}
 	@FXML
