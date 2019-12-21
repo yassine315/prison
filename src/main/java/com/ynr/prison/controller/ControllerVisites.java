@@ -22,7 +22,10 @@ public class ControllerVisites implements Initializable {
 	private AnchorPane anchorPane;
 	
 	@FXML
-	private Button ajouterVisiteButton;
+	private Button nouveauVisiteur;
+	
+	@FXML
+	private Button ancienVisiteur;
 	
 	@FXML
 	private TextField nom;
@@ -33,14 +36,10 @@ public class ControllerVisites implements Initializable {
 	@FXML
 	private Button rechercher;
 	
-	@Override
-	public void initialize(URL location, ResourceBundle resources) {
-		// TODO Auto-generated method stub
-
-	}
+	
 	@FXML
 	private void ajouterVisite() {
-		Stage currentStage = (Stage) ajouterVisiteButton.getScene().getWindow();
+		Stage currentStage = (Stage) nouveauVisiteur.getScene().getWindow();
 		
 		
 		FXMLLoader loader = new FXMLLoader(this.getClass().getClassLoader().getResource("AjouterVisite.fxml"));
@@ -58,9 +57,38 @@ public class ControllerVisites implements Initializable {
 		stage.initModality(Modality.APPLICATION_MODAL); 
 		stage.showAndWait();
 		
-		
-		
 	}
- 
-
+	@FXML
+		private void rechercher() {
+			
+			ancienVisiteur.setDisable(false);
+			nouveauVisiteur.setDisable(false);
+			
+		}
+	
+ @FXML
+ private void ancienVisiteur(){
+	
+	
+	 
+		FXMLLoader loader = new FXMLLoader(this.getClass().getClassLoader().getResource("AncienVisiteur.fxml"));
+		AnchorPane anchorPaneAncien = new AnchorPane();
+		try {
+			anchorPaneAncien= loader.load();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		 Scene sceneAncien = new Scene(anchorPaneAncien);
+		 Stage stageAncien= new Stage();
+		 stageAncien.setScene(sceneAncien);
+		 stageAncien.show();
+	 
+ }
+@Override
+public void initialize(URL location, ResourceBundle resources) {
+	// TODO Auto-generated method stub
+ nouveauVisiteur.setDisable(true);
+ ancienVisiteur.setDisable(true);
+}
 }

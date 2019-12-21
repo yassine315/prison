@@ -48,13 +48,13 @@ public class ControllerHome implements Initializable {
 	@FXML
 	private void visite() {
 		
-		FXMLLoader loader = new FXMLLoader(this.getClass().getClassLoader().getResource("Visites.fxml"));
-		
+	FXMLLoader loader = new FXMLLoader(this.getClass().getClassLoader().getResource("Visites.fxml"));
 	Region newContainer = new Region();
+	
 	try {
 		newContainer = (Region) loader.load();
 	}
-	catch (IOException e) {
+	catch (IOException e){
 		e.printStackTrace();
 	}
 	container.getChildren().clear();

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
@@ -12,7 +13,7 @@
 <?import javafx.scene.layout.TilePane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="anchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ynr.prison.controller.ControllerLogin">
+<AnchorPane fx:id="anchorPane" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ynr.prison.controller.ControllerLogin">
    <children>
       <GridPane minHeight="600.0" minWidth="500.0">
         <columnConstraints>
@@ -41,10 +42,13 @@
                </children>
             </TilePane>
             <Label text="Nom Utilisateur :" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <TextField fx:id="userName" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <TextField fx:id="userName" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor></TextField>
             <Label text="Mot de pass :" GridPane.columnIndex="1" GridPane.rowIndex="3" />
             <TextField fx:id="password" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-            <Button fx:id="buttonLogin" mnemonicParsing="false" onAction="#sauthentifier" text="S'authentifier" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+            <Button fx:id="buttonLogin" defaultButton="true" mnemonicParsing="false" onAction="#sauthentifier" text="S'authentifier" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
          </children>
          <padding>
             <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />

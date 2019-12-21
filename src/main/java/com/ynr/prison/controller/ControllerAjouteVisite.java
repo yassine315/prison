@@ -2,6 +2,7 @@ package com.ynr.prison.controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 public class ControllerAjouteVisite {
 	
@@ -12,8 +13,8 @@ public class ControllerAjouteVisite {
 	private void annullerVisite() {
 		
 		anchorPaneAV.getChildren().clear();
-		anchorPaneAV.getScene().getWindow();
-		
+		Stage stage = (Stage)anchorPaneAV.getScene().getWindow();
+		stage.close();
 		
 	}
 	
