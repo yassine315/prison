@@ -91,7 +91,6 @@ public class ControllerPrisonnier implements Initializable {
 		
 		ObservableList<Prisonnier> observableList = FXCollections.observableList(prisonniers);
 		prisonnierTable.setItems(observableList);
-		System.out.println(prisonniers.size());
 		
 	}
 
