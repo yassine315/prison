@@ -42,6 +42,7 @@ public class ControllerLogin implements Initializable {
 		scene = anchorPane.getScene(); 
 		primaryStage = (Stage)scene.getWindow();
 		
+		
 		FXMLLoader loader = new FXMLLoader(this.getClass().getClassLoader().getResource("Home.fxml"));
 		
 		try {
@@ -50,7 +51,7 @@ public class ControllerLogin implements Initializable {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+		anchorPane.getChildren().clear();
 		scene.setRoot(newAnchorPane);
 		primaryStage.setMaximized(true);
 		

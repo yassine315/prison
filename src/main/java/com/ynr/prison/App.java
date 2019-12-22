@@ -31,7 +31,10 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) {
+<<<<<<< HEAD
     	SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
+=======
+>>>>>>> cbb684cf5bf74c130334bfde402d01d56c7345a2
     	
     	FXMLLoader loader = new FXMLLoader(this.getClass().getClassLoader().getResource("Login.fxml"));
     	AnchorPane anchorPane = new AnchorPane();
