@@ -53,8 +53,8 @@ public class ControllerPrisonnier implements Initializable {
 	@FXML
 	private TableColumn<Prisonnier,String> evaluationCol;
 	
-	//@FXML
-	//private TableColumn<Prisonnier,String> detenuCol;
+	@FXML
+	private TableColumn<Prisonnier,String> detenuCol;
 	
 	@FXML
 	private TableColumn<Prisonnier,String> causeCol;
@@ -86,7 +86,7 @@ public class ControllerPrisonnier implements Initializable {
 		dateEntrerCol.setCellValueFactory(new PropertyValueFactory<>("dateEntrer"));
 		niveauCol.setCellValueFactory(new PropertyValueFactory<>("niveauEtude"));
 		evaluationCol.setCellValueFactory(new PropertyValueFactory<>("evaluation"));
-		//detenuCol.setCellValueFactory(new PropertyValueFactory<>("detenu"));
+		detenuCol.setCellValueFactory(new PropertyValueFactory<>("detenu"));
 		causeCol.setCellValueFactory(new PropertyValueFactory<>("cause"));
 		
 		ObservableList<Prisonnier> observableList = FXCollections.observableList(prisonniers);

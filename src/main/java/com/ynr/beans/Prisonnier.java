@@ -5,6 +5,7 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -14,9 +15,11 @@ import javax.persistence.Table;
 public class Prisonnier {
 	
 	@Id
-	@GeneratedValue
 	@Column(name="ID_PRISONNIER")
 	private int idPrisonnier;
+	
+	@Column(name="ID_CAUSE")
+	private int idCause;
 	
 	@Column(name="NOM")
 	private String nom;
@@ -34,11 +37,13 @@ public class Prisonnier {
 	private Date dateEntrer;
 	
 	@Column(name="NIVEAU_ETUDE")
-	private String niveauEtude;
+	private int niveauEtude;
 	
 	@Column(name="EVALUATION")
 	private int evaluation ;
 	
+	@Column(name="DETENU")
+	private boolean detenu;
 	
 	@Column(name="CAUSE")
 	private String cause;
@@ -92,14 +97,6 @@ public class Prisonnier {
 		this.dateEntrer = dateEntrer;
 	}
 
-	public String getNiveauEtude() {
-		return niveauEtude;
-	}
-
-	public void setNiveauEtude(String niveauEtude) {
-		this.niveauEtude = niveauEtude;
-	}
-
 	public String getCause() {
 		return cause;
 	}
@@ -111,6 +108,22 @@ public class Prisonnier {
 
 	
 	
+	public int getNiveauEtude() {
+		return niveauEtude;
+	}
+
+	public void setNiveauEtude(int niveauEtude) {
+		this.niveauEtude = niveauEtude;
+	}
+
+	public boolean isDetenu() {
+		return detenu;
+	}
+
+	public void setDetenu(boolean detenu) {
+		this.detenu = detenu;
+	}
+
 	public int getEvaluation() {
 		return evaluation;
 	}
@@ -119,10 +132,23 @@ public class Prisonnier {
 		this.evaluation = evaluation;
 	}
 
-	public Prisonnier(int idPrisonnier, String nom, String prenom, int age, int periode, Date dateEntrer,
-			String niveauEtude, String cause, boolean detenu) {
+	public Prisonnier(int idPrisonnier, int idCause, String nom, String prenom, int age, int periode, Date dateEntrer,
+			int niveauEtude, String cause, boolean detenu) {
 		super();
+		this.idCause = idCause;
 		this.idPrisonnier = idPrisonnier;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.age = age;
+		this.periode = periode;
+		this.dateEntrer = dateEntrer;
+		this.niveauEtude = niveauEtude;
+		this.cause = cause;
+	}
+	
+	public Prisonnier( String nom, String prenom, int age, int periode, Date dateEntrer,
+			int niveauEtude, String cause, boolean detenu) {
+		super();
 		this.nom = nom;
 		this.prenom = prenom;
 		this.age = age;
