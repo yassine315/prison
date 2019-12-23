@@ -2,6 +2,10 @@ package com.ynr.prison;
 
 import java.io.IOException;
 
+import org.hibernate.SessionFactory;
+
+import com.ynr.util.HibernateUtil;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -10,11 +14,27 @@ import javafx.stage.Stage;
 
 /**
  * JavaFX App
+ * 
+ * 
+ * module com.example {
+    requires java.persistence;
+    requires hibernate.core;
+    opens com.example to hibernate.core;
+}
  */
+
+
+
 public class App extends Application {
+	
+	SessionFactory sessionFactory ;
 
     @Override
     public void start(Stage stage) {
+
+
+    	SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
+
     	
     	FXMLLoader loader = new FXMLLoader(this.getClass().getClassLoader().getResource("Login.fxml"));
     	AnchorPane anchorPane = new AnchorPane();
@@ -29,6 +49,7 @@ public class App extends Application {
     	Scene scene = new Scene(anchorPane);
     	stage.setScene(scene);
     	stage.show();
+    
     }
 
     public static void main(String[] args) {
