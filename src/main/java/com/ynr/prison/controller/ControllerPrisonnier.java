@@ -72,6 +72,7 @@ public class ControllerPrisonnier implements Initializable {
 		CriteriaQuery<Prisonnier> criteriaQuery = criteriaBuilder.createQuery(Prisonnier.class);
 		
 		Root<Prisonnier> root = criteriaQuery.from(Prisonnier.class);
+		criteriaQuery.where(criteriaBuilder.isTrue(root.get("detenu").as(boolean.class)));
 		criteriaQuery.select(root);
 		
 		Query<Prisonnier> query = session.createQuery(criteriaQuery);

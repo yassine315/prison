@@ -16,12 +16,8 @@
                      <items>
                         <MenuItem mnemonicParsing="false" onAction="#prisonnier" text="Prisonniers" />
                         <MenuItem mnemonicParsing="false" onAction="#ajouterPrisonnier" text="Ajouter Prisonnier" />
+                        <MenuItem mnemonicParsing="false" onAction="#libererPrisonnier" text="Liberer prisonnier" />
                      </items></Menu>
-                <Menu mnemonicParsing="false" onAction="#visite" text="Visite">
-                     <items>
-                        <MenuItem mnemonicParsing="false" onAction="#visite" text="Visites" />
-                     </items></Menu>
-                <Menu mnemonicParsing="false" onAction="#prisonnier" text="Prisonnier" />
                 <Menu mnemonicParsing="false" onAction="#visite" text="Visite">
                      <items>
                         <MenuItem fx:id="consulter" mnemonicParsing="false" onAction="#visite" text="Consulter" />

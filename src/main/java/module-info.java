@@ -8,9 +8,11 @@ module com.ynr.prison {
 	requires java.logging;
 	requires java.naming;
 	requires org.hibernate.orm.core;
+	requires javafx.base;
     exports com.ynr.prison;
     
     
+    opens com.ynr.prison.nitification to javafx.fxml;
     opens com.ynr.beans to org.hibernate.orm.core, javafx.base;
     opens com.ynr.prison.controller to javafx.fxml;
 }

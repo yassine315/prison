@@ -4,6 +4,10 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import com.ynr.prison.nitification.Notification;
+import com.ynr.prison.nitification.Notifications;
+import com.ynr.prison.nitification.TrayNotification;
+
 import javafx.beans.property.ReadOnlyDoubleProperty;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -13,6 +17,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Region;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 public class ControllerHome implements Initializable {
 	
@@ -86,6 +91,28 @@ public class ControllerHome implements Initializable {
 		stage.initOwner(currentStage);
 		stage.initModality(Modality.APPLICATION_MODAL); 
 		stage.showAndWait();
+	}
+	
+	@FXML
+	private void libererPrisonnier() {
+		
+FXMLLoader loader = new FXMLLoader(this.getClass().getClassLoader().getResource("LibererPrisonnier.fxml"));
+		
+		Region newContainer = new Region();
+		
+		try {
+			newContainer =(Region) loader.load();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		container.getChildren().clear();
+		container.getChildren().add(newContainer);
+		
+		newContainer.prefHeightProperty().bind(container.heightProperty());
+		newContainer.prefWidthProperty().bind(container.widthProperty());
+		
 		
 	}
 	

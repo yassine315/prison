@@ -52,6 +52,7 @@
       
       
       <mapping class="com.ynr.beans.Prisonnier" />
+      <mapping class="com.ynr.beans.Cause" />
       
       
       
