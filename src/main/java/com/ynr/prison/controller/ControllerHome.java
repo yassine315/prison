@@ -1,3 +1,4 @@
+
 package com.ynr.prison.controller;
 
 import java.io.IOException;
@@ -45,10 +46,6 @@ public class ControllerHome implements Initializable {
 		
 	}
 	
-	@FXML
-	private void formationBase() {
-		
-	}
 	
 	@FXML
 	private void prisonnier() {
@@ -139,6 +136,26 @@ FXMLLoader loader = new FXMLLoader(this.getClass().getClassLoader().getResource(
 		
 	}
 	
+	@FXML
+	private void formationDeBase() {
+		
+		FXMLLoader loader= new FXMLLoader(this.getClass().getClassLoader().getResource("Formation.fxml"));
+		
+		AnchorPane newAnchorPane = new AnchorPane();
+		try {
+			newAnchorPane = loader.load();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		double width = container.getWidth();
+		container.getChildren().setAll(newAnchorPane) ;
+		container.setMinHeight(width);
+	
+		
+		
+	}
+	
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -147,3 +164,4 @@ FXMLLoader loader = new FXMLLoader(this.getClass().getClassLoader().getResource(
 	}
 
 }
+
