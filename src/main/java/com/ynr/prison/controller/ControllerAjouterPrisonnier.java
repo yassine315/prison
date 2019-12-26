@@ -1,7 +1,11 @@
 package com.ynr.prison.controller;
 
 import java.io.File;
+import java.io.IOException;
 import java.net.URL;
+import java.nio.file.Files;
+import java.sql.Blob;
+import java.sql.SQLException;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.ZoneId;
@@ -10,6 +14,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.ResourceBundle;
 import java.util.stream.Collectors;
+
+import javax.sql.rowset.serial.SerialBlob;
+import javax.sql.rowset.serial.SerialException;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -82,8 +89,25 @@ public class ControllerAjouterPrisonnier implements Initializable {
 		int nbrEtude = Integer.parseInt(inNbrEtude.getText());
 		Cause cause = causes.get(inCause.getValue());
 		
+		//traitment d'image
+		
+		Blob blobImage = null;
+		try {
+			byte[] fileContent = Files.readAllBytes(image.toPath());
+			blobImage = new SerialBlob(fileContent);
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} catch (SerialException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		Prisonnier prisonnier = new Prisonnier( cin, cause, nom, prenom, age, periode,
-				dateEntrer, nbrEtude,  true);
+				dateEntrer, nbrEtude,  true, blobImage);
 			
 		try {
 		session = sessionFactory.openSession();

@@ -1,5 +1,6 @@
 package com.ynr.beans;
 
+import java.sql.Blob;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -45,11 +46,10 @@ public class Prisonnier {
 	
 	@Column(name="DETENU")
 	private boolean detenu;
-
-	public Prisonnier() {
-		super();
-	}
 	
+	@Column(name="PHOTO")
+	private Blob photo;
+
 	
 	
 	public Prisonnier(String cinPrisonnier, Cause cause, String nom, String prenom, int age, int periode,
@@ -82,6 +82,46 @@ public class Prisonnier {
 		this.evaluation = evaluation;
 		this.detenu = detenu;
 	}
+	
+	
+
+	
+	
+	public Prisonnier() {
+		super();
+	}
+
+
+
+	public Prisonnier(String cinPrisonnier, Cause cause, String nom, String prenom, int age, int periode,
+			Date dateEntrer, int niveauEtude, boolean detenu, Blob photo) {
+		super();
+		this.cinPrisonnier = cinPrisonnier;
+		this.cause = cause;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.age = age;
+		this.periode = periode;
+		this.dateEntrer = dateEntrer;
+		this.niveauEtude = niveauEtude;
+		this.evaluation = evaluation;
+		this.detenu = detenu;
+		this.photo = photo;
+	}
+
+
+
+	public Blob getPhoto() {
+		return photo;
+	}
+
+
+
+	public void setPhoto(Blob photo) {
+		this.photo = photo;
+	}
+
+
 
 	public String getCinPrisonnier() {
 		return cinPrisonnier;
@@ -166,5 +206,15 @@ public class Prisonnier {
 		this.evaluation = evaluation;
 	}
 
+
+
+	@Override
+	public String toString() {
+		return "Prisonnier [cinPrisonnier=" + cinPrisonnier + ", cause=" + cause + ", nom=" + nom + ", prenom=" + prenom
+				+ ", age=" + age + ", periode=" + periode + ", dateEntrer=" + dateEntrer + ", niveauEtude="
+				+ niveauEtude + ", evaluation=" + evaluation + ", detenu=" + detenu + ", photo=" + photo + "]";
+	}
+
+	
 
 }
