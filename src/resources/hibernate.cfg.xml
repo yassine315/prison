@@ -22,9 +22,7 @@
          root
       </property>
       
-      <property name = "hibernate.connection.password">
-         sahrawia
-      </property>
+      <property name = "hibernate.connection.password"></property>
       
       <property name = "useUnicode">
          true
