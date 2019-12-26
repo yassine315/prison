@@ -141,16 +141,17 @@ FXMLLoader loader = new FXMLLoader(this.getClass().getClassLoader().getResource(
 		
 		FXMLLoader loader= new FXMLLoader(this.getClass().getClassLoader().getResource("Formation.fxml"));
 		
-		AnchorPane newAnchorPane = new AnchorPane();
+		Region newContainer = new Region();
 		try {
-			newAnchorPane = loader.load();
+			newContainer = loader.load();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		double width = container.getWidth();
-		container.getChildren().setAll(newAnchorPane) ;
-		container.setMinHeight(width);
+		container.getChildren().clear();
+		container.getChildren().add(newContainer);
+		newContainer.prefHeightProperty().bind(container.heightProperty());
+		newContainer.prefWidthProperty().bind(container.widthProperty());
 	
 		
 		
