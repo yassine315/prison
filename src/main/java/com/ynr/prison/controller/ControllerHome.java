@@ -58,6 +58,8 @@ public class ControllerHome implements Initializable {
 		
 		try {
 			newContainer =(Region) loader.load();
+			newContainer.getStylesheets().add(getClass().getClassLoader().getResource("FlatBee.css").toString());
+
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -80,6 +82,8 @@ public class ControllerHome implements Initializable {
 		AnchorPane anchorPane = new AnchorPane();
 		try {
 			anchorPane = loader.load();
+			anchorPane.getStylesheets().add(getClass().getClassLoader().getResource("FlatBee.css").toString());
+
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -102,6 +106,8 @@ FXMLLoader loader = new FXMLLoader(this.getClass().getClassLoader().getResource(
 		
 		try {
 			newContainer =(Region) loader.load();
+			newContainer.getStylesheets().add(getClass().getClassLoader().getResource("FlatBee.css").toString());
+
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -124,6 +130,8 @@ FXMLLoader loader = new FXMLLoader(this.getClass().getClassLoader().getResource(
 	
 	try {
 		newContainer = (Region) loader.load();
+		newContainer.getStylesheets().add(getClass().getClassLoader().getResource("FlatBee.css").toString());
+
 	}
 	catch (IOException e){
 		e.printStackTrace();
@@ -143,6 +151,7 @@ FXMLLoader loader = new FXMLLoader(this.getClass().getClassLoader().getResource(
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
+		this.prisonnier();
 
 	}
 

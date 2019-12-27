@@ -14,7 +14,6 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
 
-import com.ynr.beans.Cause;
 import com.ynr.beans.Prisonnier;
 import com.ynr.prison.nitification.Notification;
 import com.ynr.prison.nitification.Notifications;

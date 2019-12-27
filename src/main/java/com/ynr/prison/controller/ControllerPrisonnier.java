@@ -1,9 +1,9 @@
 package com.ynr.prison.controller;
 
-import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
-import java.sql.SQLException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -100,10 +100,10 @@ public class ControllerPrisonnier implements Initializable {
 		
 		nomCol.setCellValueFactory(new PropertyValueFactory<>("nom"));
 		prenomCol.setCellValueFactory(new PropertyValueFactory<>("prenom"));
-		naissanceCol.setCellValueFactory(new PropertyValueFactory<>("dateNaissance"));
+		naissanceCol.setCellValueFactory(p ->new ReadOnlyStringWrapper(new SimpleDateFormat("dd/MM/yyyy").format(p.getValue().getdateNaissance())));
 
 		peroideCol.setCellValueFactory(new PropertyValueFactory<>("periode"));
-		dateEntrerCol.setCellValueFactory(new PropertyValueFactory<>("dateEntrer"));
+		dateEntrerCol.setCellValueFactory(p ->new ReadOnlyStringWrapper(new SimpleDateFormat("dd/MM/yyyy").format(p.getValue().getDateEntrer())));
 		niveauCol.setCellValueFactory(new PropertyValueFactory<>("niveauEtude"));
 		evaluationCol.setCellValueFactory(new PropertyValueFactory<>("evaluation"));
 		detenuCol.setCellValueFactory(new PropertyValueFactory<>("matricule"));

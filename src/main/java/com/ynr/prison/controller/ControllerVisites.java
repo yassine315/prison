@@ -1,6 +1,5 @@
  package com.ynr.prison.controller;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 import java.util.Map;
@@ -97,7 +96,7 @@ public class ControllerVisites implements Initializable {
 			ControllerAjouteVisite cav = loader.getController();
 			cav.setPrisonnier(target);
 			cav.setTableVisite(tableVisite);
-		} catch (IOException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -144,7 +143,7 @@ public class ControllerVisites implements Initializable {
 			ControllerAncienVisiteur cav = loader.getController();
 			cav.setPrisonnier(target);
 			cav.setTableVisite(tableVisite);
-		} catch (IOException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			
