@@ -9,6 +9,7 @@ module com.ynr.prison {
 	requires java.naming;
 	requires org.hibernate.orm.core;
 	requires javafx.base;
+	requires java.sql.rowset;
     exports com.ynr.prison;
     
     

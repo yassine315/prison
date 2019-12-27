@@ -1,5 +1,6 @@
 package com.ynr.beans;
 
+import java.sql.Blob;
 import java.util.Date;
 import java.util.List;
 import java.util.Set;
@@ -60,15 +61,14 @@ public class Prisonnier {
 	
 	@Column(name="DETENU")
 	private boolean detenu;
-
-	public Prisonnier() {
-		super();
-	}
 	
+	@Column(name="PHOTO")
+	private Blob photo;
+
 	
 	
 	public Prisonnier(String cinPrisonnier, Cause cause, String nom, String prenom, Date dateNaissance, int periode,
-			Date dateEntrer, int niveauEtude, boolean detenu) {
+			Date dateEntrer, int niveauEtude, boolean detenu, Blob blobImage) {
 		super();
 		this.cinPrisonnier = cinPrisonnier;
 		this.cause = cause;
@@ -79,6 +79,7 @@ public class Prisonnier {
 		this.dateEntrer = dateEntrer;
 		this.niveauEtude = niveauEtude;
 		this.detenu = detenu;
+		this.photo = blobImage;
 	}
 
 
@@ -97,6 +98,31 @@ public class Prisonnier {
 		this.evaluation = evaluation;
 		this.detenu = detenu;
 	}
+	
+	
+
+	
+	
+	public Prisonnier() {
+		super();
+	}
+
+
+
+	
+
+
+	public Blob getPhoto() {
+		return photo;
+	}
+
+
+
+	public void setPhoto(Blob photo) {
+		this.photo = photo;
+	}
+
+
 
 	public String getCinPrisonnier() {
 		return cinPrisonnier;
@@ -180,7 +206,6 @@ public class Prisonnier {
 	public void setEvaluation(int evaluation) {
 		this.evaluation = evaluation;
 	}
-
 
 
 	public int getMatricule() {
