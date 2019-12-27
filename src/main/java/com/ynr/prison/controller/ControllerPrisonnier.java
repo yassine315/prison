@@ -15,6 +15,7 @@ import org.hibernate.query.Query;
 import com.ynr.beans.Prisonnier;
 import com.ynr.util.HibernateUtil;
 
+import javafx.beans.property.ReadOnlyStringWrapper;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -39,7 +40,7 @@ public class ControllerPrisonnier implements Initializable {
 	private TableColumn<Prisonnier,String> prenomCol;
 	
 	@FXML
-	private TableColumn<Prisonnier,String> ageCol;
+	private TableColumn<Prisonnier,String> naissanceCol;
 	
 	@FXML
 	private TableColumn<Prisonnier,String> peroideCol;
@@ -82,13 +83,13 @@ public class ControllerPrisonnier implements Initializable {
 		
 		nomCol.setCellValueFactory(new PropertyValueFactory<>("nom"));
 		prenomCol.setCellValueFactory(new PropertyValueFactory<>("prenom"));
-		ageCol.setCellValueFactory(new PropertyValueFactory<>("prenom"));
+		naissanceCol.setCellValueFactory(new PropertyValueFactory<>("dateNaissance"));
 		peroideCol.setCellValueFactory(new PropertyValueFactory<>("periode"));
 		dateEntrerCol.setCellValueFactory(new PropertyValueFactory<>("dateEntrer"));
 		niveauCol.setCellValueFactory(new PropertyValueFactory<>("niveauEtude"));
 		evaluationCol.setCellValueFactory(new PropertyValueFactory<>("evaluation"));
-		detenuCol.setCellValueFactory(new PropertyValueFactory<>("detenu"));
-		causeCol.setCellValueFactory(new PropertyValueFactory<>("cause"));
+		detenuCol.setCellValueFactory(new PropertyValueFactory<>("matricule"));
+		causeCol.setCellValueFactory(p -> new ReadOnlyStringWrapper(p.getValue().getCause().getNom()));
 		
 		ObservableList<Prisonnier> observableList = FXCollections.observableList(prisonniers);
 		prisonnierTable.setItems(observableList);

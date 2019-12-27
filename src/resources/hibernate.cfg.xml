@@ -23,7 +23,7 @@
       </property>
       
       <property name = "hibernate.connection.password">
-         sahrawia
+         root
       </property>
       
       <property name = "useUnicode">
@@ -53,6 +53,8 @@
       
       <mapping class="com.ynr.beans.Prisonnier" />
       <mapping class="com.ynr.beans.Cause" />
+      <mapping class="com.ynr.beans.Visite"/>
+      <mapping class="com.ynr.beans.Visiteur"/>
       
       
       

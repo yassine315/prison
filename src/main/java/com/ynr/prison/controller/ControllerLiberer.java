@@ -22,6 +22,7 @@ import com.ynr.prison.nitification.TrayNotification;
 import com.ynr.util.ComboboxNiama;
 import com.ynr.util.HibernateUtil;
 
+import javafx.beans.property.ReadOnlyStringWrapper;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -144,7 +145,7 @@ public class ControllerLiberer implements Initializable {
 		niveauCol.setCellValueFactory(new PropertyValueFactory<>("niveauEtude"));
 		evaluationCol.setCellValueFactory(new PropertyValueFactory<>("evaluation"));
 		detenuCol.setCellValueFactory(new PropertyValueFactory<>("detenu"));
-		causeCol.setCellValueFactory(new PropertyValueFactory<>("cause"));
+		causeCol.setCellValueFactory(p -> new ReadOnlyStringWrapper(p.getValue().getCause().getNom()));
 		
 		ObservableList<Prisonnier> observableList = FXCollections.observableList(liberers);
 		prisonnierTable.setItems(observableList);

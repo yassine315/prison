@@ -9,8 +9,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-
-<AnchorPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ynr.prison.controller.ControllerPrisonnier">
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ynr.prison.controller.ControllerPrisonnier">
    <children>
       <VBox prefHeight="455.0" prefWidth="677.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -35,14 +34,14 @@
             </HBox>
             <TableView fx:id="prisonnierTable" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" VBox.vgrow="ALWAYS">
               <columns>
+                  <TableColumn fx:id="detenuCol" prefWidth="75.0" text="Matricule" />
                 <TableColumn fx:id="nomCol" prefWidth="75.0" text="Nom" />
                 <TableColumn fx:id="prenomCol" prefWidth="75.0" text="Prenom" />
-                  <TableColumn fx:id="ageCol" prefWidth="75.0" text="Age" />
+                  <TableColumn fx:id="naissanceCol" prefWidth="75.0" text="Date de Naissance" />
                   <TableColumn fx:id="peroideCol" prefWidth="75.0" text="Periode" />
                   <TableColumn fx:id="dateEntrerCol" prefWidth="75.0" text="Date entrer" />
                   <TableColumn fx:id="niveauCol" prefWidth="75.0" text="Niveau Etude" />
                   <TableColumn fx:id="evaluationCol" prefWidth="75.0" text="Evaluation" />
-                  <TableColumn fx:id="detenuCol" prefWidth="75.0" text="état" />
                   <TableColumn fx:id="causeCol" prefWidth="75.0" text="Cause" />
               </columns>
                <columnResizePolicy>

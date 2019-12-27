@@ -1,4 +1,4 @@
-package com.ynr.prison.controller;
+ package com.ynr.prison.controller;
 
 import java.io.File;
 import java.net.URL;
@@ -50,7 +50,7 @@ public class ControllerAjouterPrisonnier implements Initializable {
 	private TextField inPrenom;
 	
 	@FXML
-	private TextField inAge;
+	private DatePicker inNaissance;
 	
 	@FXML
 	private TextField inPeriode;
@@ -72,7 +72,10 @@ public class ControllerAjouterPrisonnier implements Initializable {
 		String cin = inCin.getText();
 		String nom  = inNom.getText();
 		String prenom = inPrenom.getText();
-		int age = Integer.parseInt(inAge.getText());
+		LocalDate localDateN = inNaissance.getValue();
+		Instant instantN = Instant.from(localDateN.atStartOfDay(ZoneId.systemDefault()));
+		Date naissance = Date.from(instantN);
+		
 		int periode =  Integer.parseInt(inPeriode.getText());
 		
 		LocalDate localDate = inDateEntrer.getValue();
@@ -82,7 +85,7 @@ public class ControllerAjouterPrisonnier implements Initializable {
 		int nbrEtude = Integer.parseInt(inNbrEtude.getText());
 		Cause cause = causes.get(inCause.getValue());
 		
-		Prisonnier prisonnier = new Prisonnier( cin, cause, nom, prenom, age, periode,
+		Prisonnier prisonnier = new Prisonnier( cin, cause, nom, prenom, naissance, periode,
 				dateEntrer, nbrEtude,  true);
 			
 		try {
@@ -97,13 +100,13 @@ public class ControllerAjouterPrisonnier implements Initializable {
 		/**
 		 * notifier la reussite
 		 */
-		String title = "L'operation est effectue";
+		String title = "L'operation est effectuée";
         String message = "Votre prisonnier a été ajouté correctement";
         Notification notification = Notifications.SUCCESS;
         TrayNotification tray = new TrayNotification(title, message, notification);
         tray.showAndDismiss(new Duration(2000));
 		}catch(Exception e){
-			String title = "L'operation est échoer";
+			String title = "L'operation est échouée";
 	        String message = "Votre prisonnier n'a pas été ajouté ";
 	        Notification notification = Notifications.ERROR;
 	        TrayNotification tray = new TrayNotification(title, message, notification);
