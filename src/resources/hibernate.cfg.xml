@@ -25,6 +25,7 @@
       <property name = "hibernate.connection.password">
          root
       </property>
+
       
       <property name = "useUnicode">
          true
@@ -56,6 +57,10 @@
       <mapping class="com.ynr.beans.Visite"/>
       <mapping class="com.ynr.beans.Visiteur"/>
       <mapping class="com.ynr.beans.User"/>
+       <mapping class="com.ynr.beans.Session" />
+        <mapping class="com.ynr.beans.Sinscrire" />
+         <mapping class="com.ynr.beans.Formation" />
+          <mapping class="com.ynr.beans.Type" />
       
       
       

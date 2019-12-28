@@ -162,12 +162,21 @@
 }
 .combo-box
 {
+	-fx-background-color: linear-gradient(to bottom, derive(-fx-text-box-border, -10%), -fx-text-box-border),
+    linear-gradient(from 0px 0px to 0px 5px, derive(-fx-control-inner-background, -9%), -fx-control-inner-background);
+	-fx-background-insets: 0, 1;
+	-fx-background-radius: 3, 2;
+	-fx-font-size : 12pt;
 	-fx-background-color: #2E2E2E;
-	-fx-border-radius: 0;
-	-fx-background-radius: 0;
 }
+
+
 .text-field
 {
+	-fx-background-color: linear-gradient(to bottom, derive(-fx-text-box-border, -10%), -fx-text-box-border),
+    linear-gradient(from 0px 0px to 0px 5px, derive(-fx-control-inner-background, -9%), -fx-control-inner-background);
+	-fx-background-insets: 0, 1;
+	-fx-background-radius: 3, 2;
 	-fx-background-color: #2E2E2E;
 	-fx-text-fill: white;
 	-fx-background-radius: 0;

@@ -24,11 +24,11 @@
                      </items></Menu>
                 <Menu mnemonicParsing="false" text="Formation">
                      <items>
-                        <MenuItem mnemonicParsing="false" onAction="#formationBase" text="Formation de base" />
+                        <MenuItem mnemonicParsing="false" onAction="#formationDeBase" text="Formation de base" />
                         <MenuItem mnemonicParsing="false" onAction="#formationProfessionnelle" text="Formation professionnelle" />
                         <MenuItem mnemonicParsing="false" onAction="#formationNSS" text="Formation de niveau secondaire ou supérieur" />
-                        <MenuItem mnemonicParsing="false" onAction="#passageExamens" text="Passage des examens" />
-                        <MenuItem mnemonicParsing="false" onAction="#nouveauFormation" text="Nouveau type e formation" />
+                        <MenuItem mnemonicParsing="false" onAction="#description" text="Description des types" />
+                        <MenuItem mnemonicParsing="false" onAction="#nouveauType" text="Nouveau type" />
                      </items></Menu>
                   <Menu mnemonicParsing="false" onAction="#deces" text="Decés" />
               </menus>

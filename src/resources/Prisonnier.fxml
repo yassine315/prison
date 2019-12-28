@@ -23,7 +23,7 @@
                         <Insets right="10.0" />
                      </padding>
                   </Label>
-                  <TextField />
+                  <TextField fx:id="inNom" />
                </children>
                <VBox.margin>
                   <Insets />

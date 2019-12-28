@@ -1,3 +1,4 @@
+
 package com.ynr.prison.controller;
 
 import java.io.IOException;
@@ -12,27 +13,65 @@ import javafx.beans.property.ReadOnlyDoubleProperty;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Region;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import javafx.util.Duration;
 
 public class ControllerHome implements Initializable {
 	
 	@FXML
 	private AnchorPane container;
-	
+
+
 	
 	@FXML
-	private void nouveauFormation() {
+	private void nouveauType() {
+		
+		Stage currentStage = (Stage) container.getScene().getWindow();
+
+		FXMLLoader loader= new FXMLLoader(this.getClass().getClassLoader().getResource("AjouterType.fxml"));
+	Region anchorPane = new Region();
+		try {
+			anchorPane = loader.load();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	Scene	scene = new Scene(anchorPane);
+	Stage	stage = new Stage();
+		stage.setScene(scene);
+		
+		stage.initOwner(currentStage);
+		stage.initModality(Modality.APPLICATION_MODAL); 
+		stage.showAndWait();
+		
+		
+		
+		
+
 		
 	}
 	
 	@FXML
-	private void passageExamens() {
+	private void description() {
+		FXMLLoader loader= new FXMLLoader(this.getClass().getClassLoader().getResource("description.fxml"));
 		
+		Region newContainer = new Region();
+		try {
+			newContainer = loader.load();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		container.getChildren().clear();
+		container.getChildren().add(newContainer);
+		newContainer.prefHeightProperty().bind(container.heightProperty());
+		newContainer.prefWidthProperty().bind(container.widthProperty());
 	}
 	
 	@FXML
@@ -45,10 +84,6 @@ public class ControllerHome implements Initializable {
 		
 	}
 	
-	@FXML
-	private void formationBase() {
-		
-	}
 	
 	@FXML
 	private void prisonnier() {
@@ -147,6 +182,27 @@ FXMLLoader loader = new FXMLLoader(this.getClass().getClassLoader().getResource(
 		
 	}
 	
+	@FXML
+	private void formationDeBase() {
+		
+		FXMLLoader loader= new FXMLLoader(this.getClass().getClassLoader().getResource("Formation.fxml"));
+		
+		Region newContainer = new Region();
+		try {
+			newContainer = loader.load();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		container.getChildren().clear();
+		container.getChildren().add(newContainer);
+		newContainer.prefHeightProperty().bind(container.heightProperty());
+		newContainer.prefWidthProperty().bind(container.widthProperty());
+	
+		
+		
+	}
+	
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -156,3 +212,4 @@ FXMLLoader loader = new FXMLLoader(this.getClass().getClassLoader().getResource(
 	}
 
 }
+

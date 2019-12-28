@@ -24,6 +24,8 @@ import com.ynr.util.HibernateUtil;
 import javafx.beans.property.ReadOnlyStringWrapper;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -31,6 +33,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -44,8 +47,11 @@ import javafx.util.Duration;
 public class ControllerPrisonnier implements Initializable {
 	
 	private SessionFactory sessionFactory;
-	
 	private List<Prisonnier> prisonniers;
+	ObservableList<Prisonnier> observableList;
+	
+	@FXML
+	private TextField inNom;
 	
 	@FXML 
 	private TableView<Prisonnier> prisonnierTable;
@@ -144,9 +150,55 @@ public class ControllerPrisonnier implements Initializable {
 		    return row ;
 		});
 		
-		ObservableList<Prisonnier> observableList = FXCollections.observableList(prisonniers);
+		observableList = FXCollections.observableList(prisonniers);
 		prisonnierTable.setItems(observableList);
-		
+		sorting();
+
+	}
+	
+	
+	
+	public ControllerPrisonnier() {
+		super();
+	}
+
+
+
+	private void sorting() {
+		 //nomCol.setCellValueFactory(cellData -> cellData.getValue().firstNameProperty());
+	        //lastNameColumn.setCellValueFactory(cellData -> cellData.getValue().lastNameProperty());
+	        
+	        // 1. Wrap the ObservableList in a FilteredList (initially display all data).
+	        FilteredList<Prisonnier> filteredData = new FilteredList<>(observableList, p -> true);
+	        
+	        // 2. Set the filter Predicate whenever the filter changes.
+	        inNom.textProperty().addListener((observableList, oldValue, newValue) -> {
+	            filteredData.setPredicate(person -> {
+	                // If filter text is empty, display all persons.
+	                if (newValue == null || newValue.isEmpty()) {
+	                    return true;
+	                }
+	                
+	                // Compare first name and last name of every person with filter text.
+	                String lowerCaseFilter = newValue.toLowerCase();
+	                
+	                if (person.getPrenom().toLowerCase().contains(lowerCaseFilter)) {
+	                    return true; // Filter matches first name.
+	                } else if (person.getNom().toLowerCase().contains(lowerCaseFilter)) {
+	                    return true; // Filter matches last name.
+	                }
+	                return false; // Does not match.
+	            });
+	        });
+	        
+	        // 3. Wrap the FilteredList in a SortedList. 
+	        SortedList<Prisonnier> sortedData = new SortedList<>(filteredData);
+	        
+	        // 4. Bind the SortedList comparator to the TableView comparator.
+	        sortedData.comparatorProperty().bind(prisonnierTable.comparatorProperty());
+	        
+	        // 5. Add sorted (and filtered) data to the table.
+	        prisonnierTable.setItems(sortedData);
 	}
 
 }

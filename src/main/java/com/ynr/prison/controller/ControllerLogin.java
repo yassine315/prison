@@ -71,6 +71,11 @@ public class ControllerLogin implements Initializable {
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
+				String title = "L'operation est échouée";
+		        String message = "Erreur de l'authentification";
+		        Notification notification = Notifications.ERROR;
+		        TrayNotification tray = new TrayNotification(title, message, notification);
+		        tray.showAndDismiss(new Duration(2000));
 			}
 			anchorPane.getChildren().clear();
 			scene.setRoot(newAnchorPane);

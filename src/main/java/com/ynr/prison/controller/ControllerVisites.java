@@ -93,6 +93,8 @@ public class ControllerVisites implements Initializable {
 		FXMLLoader loader = new FXMLLoader(this.getClass().getClassLoader().getResource("AjouterVisite.fxml"));
 		try {
 			anchorPane = loader.load();
+			anchorPane.getStylesheets().add(getClass().getClassLoader().getResource("FlatBee.css").toString());
+
 			ControllerAjouteVisite cav = loader.getController();
 			cav.setPrisonnier(target);
 			cav.setTableVisite(tableVisite);
@@ -140,6 +142,8 @@ public class ControllerVisites implements Initializable {
 		Region anchorPaneAncien = new Region();
 		try {
 			anchorPaneAncien= loader.load();
+			anchorPaneAncien.getStylesheets().add(getClass().getClassLoader().getResource("FlatBee.css").toString());
+
 			ControllerAncienVisiteur cav = loader.getController();
 			cav.setPrisonnier(target);
 			cav.setTableVisite(tableVisite);
