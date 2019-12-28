@@ -1,5 +1,7 @@
 package com.ynr.prison.controller;
 
+import com.ynr.beans.Type;
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -14,7 +16,8 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 public class ControllerFormation implements Initializable {
-
+	private Type typeTarget;
+	
 	@FXML 
 	private Button nouvelleFormation;
 
@@ -44,6 +47,12 @@ Stage	stage = new Stage();
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
 
+	}
+	public Type getTypeTarget() {
+		return typeTarget;
+	}
+	public void setTypeTarget(Type typeTarget) {
+		this.typeTarget = typeTarget;
 	}
 
 }
