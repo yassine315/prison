@@ -58,8 +58,20 @@ public class ControllerHome implements Initializable {
 	}
 	
 	@FXML
-	private void passageExamens() {
+	private void description() {
+		FXMLLoader loader= new FXMLLoader(this.getClass().getClassLoader().getResource("description.fxml"));
 		
+		Region newContainer = new Region();
+		try {
+			newContainer = loader.load();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		container.getChildren().clear();
+		container.getChildren().add(newContainer);
+		newContainer.prefHeightProperty().bind(container.heightProperty());
+		newContainer.prefWidthProperty().bind(container.widthProperty());
 	}
 	
 	@FXML
