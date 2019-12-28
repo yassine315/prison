@@ -49,11 +49,11 @@
               </rowConstraints>
                <children>
                   <Label alignment="TOP_LEFT" prefHeight="29.0" prefWidth="122.0" text="Nom :" GridPane.columnIndex="2" GridPane.columnSpan="2" />
-                  <TextField fx:id="inNon" alignment="CENTER" prefHeight="25.0" prefWidth="114.0" GridPane.columnIndex="4" GridPane.columnSpan="3" />
+                  <TextField fx:id="inNon" prefHeight="25.0" prefWidth="114.0" GridPane.columnIndex="4" GridPane.columnSpan="3" />
                   <Label alignment="TOP_LEFT" prefHeight="17.0" prefWidth="128.0" text="Prénom :" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="1" />
-                  <TextField fx:id="inPrenom" alignment="CENTER" GridPane.columnIndex="4" GridPane.columnSpan="3" GridPane.rowIndex="1" />
+                  <TextField fx:id="inPrenom" GridPane.columnIndex="4" GridPane.columnSpan="3" GridPane.rowIndex="1" />
                   <Label alignment="TOP_LEFT" prefHeight="17.0" prefWidth="112.0" text="Lien de Parenté :" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="2" />
-                  <TextField fx:id="inLien" alignment="CENTER" prefHeight="25.0" prefWidth="103.0" GridPane.columnIndex="4" GridPane.columnSpan="3" GridPane.rowIndex="2" />
+                  <TextField fx:id="inLien" prefHeight="25.0" prefWidth="103.0" GridPane.columnIndex="4" GridPane.columnSpan="3" GridPane.rowIndex="2" />
                   <Label alignment="TOP_LEFT" prefHeight="17.0" prefWidth="114.0" text="CIN :" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="3" />
                   <TextField fx:id="inCin" prefHeight="25.0" prefWidth="85.0" GridPane.columnIndex="4" GridPane.columnSpan="3" GridPane.rowIndex="3" />
                   <Label ellipsisString="yaaeae" text="Nombre de visiteurs :" wrapText="true" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="4" />

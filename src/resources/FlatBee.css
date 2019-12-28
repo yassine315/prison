@@ -1,7 +1,18 @@
-.title-pane, .title-pane > .label, .menubar
+.title-pane, .title-pane > .label
 {
+	-fx-font-size: 12pt ;
 	-fx-background-color: #444444;
 	-fx-text-fill: white;
+}
+.label{
+	-fx-font-size: 12pt ;
+}
+.menu-bar{
+	-fx-background-color: #2E2E2E;
+	-fx-text-fill: white;
+	-fx-font-size: 12pt ;
+		
+	
 }
 .close, .minimize
 {
@@ -18,10 +29,12 @@
 }
 .menu > .label
 {
+	-fx-font-size: 12pt ;
 	-fx-text-fill: white;
 }
 .menu-item
 {
+	-fx-font-size: 12pt ;
 	-fx-background-color: #3D3D3D;
 }
 .menu-item:hover
@@ -56,6 +69,8 @@
 	-fx-background-radius: 0 0 0 0;
 	-fx-background-color: #2E2E2E;
 	-fx-text-fill: #B3A9A3;
+	-fx-font-size: 12pt ;
+	
 }
 .button:hover
 {
@@ -156,6 +171,8 @@
 	-fx-background-color: #2E2E2E;
 	-fx-text-fill: white;
 	-fx-background-radius: 0;
+	-fx-font-size: 10pt ;
+	
 }
 .spinner, .increment-arrow-button, .decrement-arrow-button
 {
@@ -185,6 +202,7 @@
 }
 .cell
 {
+	-fx-font-size: 15pt ;
 	-fx-alignment: CENTER;
 	-fx-background-color: #2E2E2E;
 	-fx-text-fill: white;
