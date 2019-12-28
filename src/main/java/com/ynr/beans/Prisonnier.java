@@ -3,7 +3,6 @@ package com.ynr.beans;
 import java.sql.Blob;
 import java.util.Date;
 import java.util.List;
-import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -65,7 +64,8 @@ public class Prisonnier {
 	@Column(name="PHOTO")
 	private Blob photo;
 
-	
+	@OneToMany( mappedBy = "prisonnier", cascade = CascadeType.ALL, orphanRemoval = true)
+	private List<Sinscrire> sessions;  
 	
 	public Prisonnier(String cinPrisonnier, Cause cause, String nom, String prenom, Date dateNaissance, int periode,
 			Date dateEntrer, int niveauEtude, boolean detenu, Blob blobImage) {
@@ -246,5 +246,18 @@ public class Prisonnier {
 		return nom+" "+prenom;
 	}
 
+
+
+	public List<Sinscrire> getSessions() {
+		return sessions;
+	}
+
+
+
+	public void setSessions(List<Sinscrire> sessions) {
+		this.sessions = sessions;
+	}
+
+	
 
 }
