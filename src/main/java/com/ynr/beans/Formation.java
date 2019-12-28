@@ -4,7 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -14,7 +14,7 @@ public class Formation {
 @Id
 @Column(name="ID_FORMATION")
 private int id_formation;
-@OneToMany
+@ManyToOne
 @JoinColumn(name="ID_TYPE")
 private Type id_type;
 @Column(name="NOM_FORMATION")
