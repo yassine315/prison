@@ -18,7 +18,7 @@ public class ControllerFormation implements Initializable {
 	@FXML 
 	private Button nouvelleFormation;
 
-@FXML
+	@FXML
 private void ajouterFormation() {
 	Stage currentStage = (Stage) nouvelleFormation.getScene().getWindow();
 

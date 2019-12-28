@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <VBox alignment="CENTER" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ynr.prison.controller.ControllerFormation">
    <children>
       <VBox alignment="CENTER" prefHeight="120.0" prefWidth="733.0">
@@ -30,7 +29,7 @@
         <columns>
           <TableColumn prefWidth="116.0" text="Nom de formation" />
           <TableColumn minWidth="0.0" prefWidth="166.0" text="Durée (/mois)" />
-            <TableColumn minWidth="0.0" prefWidth="225.0" text="Formateur" />
+            <TableColumn minWidth="0.0" prefWidth="225.0" text="Responsable" />
             <TableColumn maxWidth="87.0" minWidth="66.0" prefWidth="47.0" resizable="false" text="Consulter" />
             <TableColumn maxWidth="88.0" minWidth="66.0" prefWidth="57.0" text="modifier" />
         </columns>
