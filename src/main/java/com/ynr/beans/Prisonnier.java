@@ -1,5 +1,6 @@
 package com.ynr.beans;
 
+import java.io.Serializable;
 import java.sql.Blob;
 import java.util.Date;
 import java.util.List;
@@ -19,8 +20,13 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="PRISONNIER")
-public class Prisonnier {
+public class Prisonnier implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 6299506684423752324L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="MATRICULE")

@@ -84,7 +84,8 @@ public class ControllerAncienVisiteur implements Initializable {
 		// TODO Auto-generated method stub
 		 sessionFactory = HibernateUtil.getSessionFactory();
 
-		Platform.runLater(() -> {
+		Platform.runLater(new Runnable() {
+		    public void run() {
 			visiteurs = new HashMap<String,Visiteur>();
 			for(Visite v : prisonnier.getVisites()) {
 				visiteurs.put(v.getVisiteur().getNom()+" "+v.getVisiteur().getPrenom()+" "+v.getVisiteur().getCin(),v.getVisiteur());
@@ -100,7 +101,7 @@ public class ControllerAncienVisiteur implements Initializable {
 			cmb.getItems().addAll(LISTA);
 			new ComboboxNiama<String>(cmb);
 		
-
+		    }
 	    });
 		
 		cmbN.setTooltip(new Tooltip());

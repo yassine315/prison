@@ -1,5 +1,6 @@
 package com.ynr.beans;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
@@ -15,8 +16,13 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="visite")
-public class Visite {
-    @Id
+public class Visite implements Serializable{
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -519619262109339390L;
+
+	@Id
   	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="ID_VISITE")
     private int idVisite;

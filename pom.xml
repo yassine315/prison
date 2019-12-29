@@ -63,11 +63,11 @@
                 <version>0.0.1</version>
                 <configuration>
                     <mainClass>com.ynr.prison.App</mainClass>
-
                     <executable>C:\Program Files\Java\jdk-13.0.1\bin\javaw.exe</executable>
-
+					<bundler>EXE</bundler>
                 </configuration>
             </plugin>
+            
         </plugins>
     </build>
 </project>

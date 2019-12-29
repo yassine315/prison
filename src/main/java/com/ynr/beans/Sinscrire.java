@@ -1,6 +1,8 @@
 package com.ynr.beans;
 
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
@@ -14,8 +16,13 @@ import com.ynr.util.InscriptionId;
 
 @Entity
 @Table(name="SINSCRIRE")
-public class Sinscrire {
+public class Sinscrire implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -6957366805275982937L;
+
 	@EmbeddedId
     private InscriptionId id;
 	

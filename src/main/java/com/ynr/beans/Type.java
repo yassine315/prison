@@ -1,5 +1,6 @@
 package com.ynr.beans;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -13,8 +14,13 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 @Entity
 @Table(name="TYPE")
-public class Type {
+public class Type implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 5733392813929895288L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="ID_TYPE")

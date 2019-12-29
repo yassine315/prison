@@ -59,6 +59,7 @@
         <mapping class="com.ynr.beans.Sinscrire" />
          <mapping class="com.ynr.beans.Formation" />
           <mapping class="com.ynr.beans.Type" />
+       <mapping class="com.ynr.beans.Deces" />
       
       
       

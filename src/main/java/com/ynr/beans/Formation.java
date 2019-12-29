@@ -1,5 +1,6 @@
 package com.ynr.beans;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -16,8 +17,13 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="FORMATION")	
-public class Formation {
+public class Formation implements Serializable{
 				
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -4243454388167645746L;
+
 	@Id
   	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="ID_FORMATION")

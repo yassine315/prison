@@ -48,7 +48,7 @@ public class App extends Application {
     	
     	Scene scene = new Scene(anchorPane);
     	stage.setScene(scene);
-    	stage.setTitle(value);
+    	stage.setTitle("Prison");
     	stage.getIcons().add(new Image(getClass().getClassLoader().getResourceAsStream("prison_logo.jpg")));
     	stage.show();
     

@@ -58,16 +58,12 @@ public class ControllerHome implements Initializable {
 
 	Scene	scene = new Scene(anchorPane);
 	Stage	stage = new Stage();
+	stage.setTitle("Nouveau Type");
 		stage.setScene(scene);
 		
 		stage.initOwner(currentStage);
 		stage.initModality(Modality.APPLICATION_MODAL); 
 		stage.showAndWait();
-		
-		
-		
-		
-
 		
 	}
 	
@@ -129,6 +125,7 @@ public class ControllerHome implements Initializable {
 		}
 		Scene scene = new Scene(anchorPane);
 		Stage stage = new Stage();
+		stage.setTitle("Ajouter Prisonnier");
 		stage.setScene(scene);
 		
 		stage.initOwner(currentStage);
@@ -183,6 +180,22 @@ FXMLLoader loader = new FXMLLoader(this.getClass().getClassLoader().getResource(
 	
 	@FXML
 	private void deces() {
+		
+		FXMLLoader loader = new FXMLLoader(this.getClass().getClassLoader().getResource("Decés.fxml"));
+		Region newContainer = new Region();
+		
+		try {
+			newContainer = (Region) loader.load();
+			newContainer.getStylesheets().add(getClass().getClassLoader().getResource("FlatBee.css").toString());
+
+		}
+		catch (IOException e){
+			e.printStackTrace();
+		}
+		container.getChildren().clear();
+		container.getChildren().add(newContainer);
+		newContainer.prefHeightProperty().bind(container.heightProperty());
+		newContainer.prefWidthProperty().bind(container.widthProperty());
 		
 	}
 	

@@ -29,7 +29,10 @@
                         <MenuItem mnemonicParsing="false" onAction="#description" text="Description des types" />
                         <MenuItem mnemonicParsing="false" onAction="#nouveauType" text="Nouveau type" />
                      </items></Menu>
-                  <Menu mnemonicParsing="false" onAction="#deces" text="Decés" />
+                  <Menu mnemonicParsing="false" onAction="#deces" text="Decés">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#deces" text="Consulter" />
+                     </items></Menu>
               </menus>
             </MenuBar>
           <AnchorPane fx:id="container" prefWidth="269.0" VBox.vgrow="ALWAYS" />

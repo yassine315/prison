@@ -1,5 +1,7 @@
 package com.ynr.beans;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -8,8 +10,13 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="CAUSES")
-public class Cause {
+public class Cause implements Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 6520150263233788130L;
+
 	@Id
 	@Column(name="ID_CAUSE")
 	private int idCause;

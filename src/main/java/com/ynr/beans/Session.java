@@ -1,5 +1,6 @@
 package com.ynr.beans;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
@@ -19,7 +20,12 @@ import org.hibernate.annotations.NaturalIdCache;
 
 @Entity
 @Table(name="SESSION")
-public class Session {
+public class Session implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 4293478737666812987L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="ID_SESSION")
