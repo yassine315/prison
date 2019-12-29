@@ -44,6 +44,7 @@ public class ControllerFormation implements Initializable {
 	
 	SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
 	private Type typeTarget;
+<<<<<<< HEAD
 	private List<com.ynr.beans.Session> sessions;
 	
 	 @FXML
@@ -61,24 +62,30 @@ public class ControllerFormation implements Initializable {
 	 @FXML
 	 private Label titreFormation;
 
+=======
+
+	
+>>>>>>> df5fd0750e7be7b5dbbab49db14e4a5ceaf57bda
 	
 	@FXML 
 	private Button nouvelleFormation;
 
 	@FXML
 private void ajouterFormation() {
-		Stage currentStage = (Stage) nouvelleFormation.getScene().getWindow();
+
+	Stage currentStage = (Stage) nouvelleFormation.getScene().getWindow();
+
+	FXMLLoader loader= new FXMLLoader(this.getClass().getClassLoader().getResource("AjouterFormation.fxml"));
+AnchorPane anchorPane = new AnchorPane();
+	try {
+		anchorPane = loader.load();
+		ControllerAjouterFormation cv =loader.getController();
+		cv.setTypeTargett(typeTarget);
 	
-		FXMLLoader loader= new FXMLLoader(this.getClass().getClassLoader().getResource("AjouterFormation.fxml"));
-		AnchorPane anchorPane = new AnchorPane();
-		try {
-			anchorPane = loader.load();
-			anchorPane.getStylesheets().add(getClass().getClassLoader().getResource("FlatBee.css").toString());
-	
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	} catch (IOException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
 
 		Scene	scene = new Scene(anchorPane);
 		Stage	stage = new Stage();

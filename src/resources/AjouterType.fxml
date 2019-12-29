@@ -48,14 +48,14 @@
                         <Font name="System Bold" size="16.0" />
                      </font>
                   </Label>
-                  <TextField GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="2" />
-                  <TextField GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="1" />
-                  <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="108.0" text="Ajouter" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="4">
+                  <TextField fx:id="inResponsableType" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="2" />
+                  <TextField fx:id="inTypeFormation" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+                  <Button mnemonicParsing="false" onAction="#ajouterType" prefHeight="25.0" prefWidth="108.0" text="Ajouter" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="4">
                      <font>
                         <Font size="15.0" />
                      </font>
                   </Button>
-                  <TextArea prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="3" />
+                  <TextArea fx:id="inDescriptionType" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="3" />
                </children>
             </GridPane>
          </content>

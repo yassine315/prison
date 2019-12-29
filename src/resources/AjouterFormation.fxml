@@ -32,7 +32,7 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <TextField GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="3" />
+                  <TextField fx:id="inDureeFormation" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="3" />
                   <Label text="Nom de formation" GridPane.columnSpan="3" GridPane.rowIndex="1">
                      <font>
                         <Font name="System Bold" size="16.0" />
@@ -48,9 +48,9 @@
                         <Font name="System Bold" size="16.0" />
                      </font>
                   </Label>
-                  <TextField GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="2" />
-                  <TextField GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="1" />
-                  <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="108.0" text="Ajouter" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="4">
+                  <TextField fx:id="inResponsableFormation" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="2" />
+                  <TextField fx:id="inNomFormation" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+                  <Button mnemonicParsing="false" onAction="#ajouterFormation" prefHeight="25.0" prefWidth="108.0" text="Ajouter" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="4">
                      <font>
                         <Font size="15.0" />
                      </font>

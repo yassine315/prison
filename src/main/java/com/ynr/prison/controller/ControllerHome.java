@@ -196,6 +196,7 @@ FXMLLoader loader = new FXMLLoader(this.getClass().getClassLoader().getResource(
 			newContainer = loader.load();
 			ControllerFormation cav = loader.getController();
 			cav.setTypeTarget(typeTarget);
+			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
