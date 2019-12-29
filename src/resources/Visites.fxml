@@ -36,15 +36,15 @@
             <Insets left="20.0" top="20.0" />
          </padding>
       </HBox>
-      <TableView prefHeight="390.0" prefWidth="612.0">
+      <TableView fx:id="tableVisite" prefHeight="390.0" prefWidth="612.0">
         <columns>
-            <TableColumn prefWidth="63.0" text="Date" />
-          <TableColumn prefWidth="75.0" sortable="false" text="Nom" />
-          <TableColumn prefWidth="75.0" text="Prénom" />
-            <TableColumn prefWidth="97.0" text="Lien de Parenté" />
-            <TableColumn prefWidth="75.0" text="CIN" />
-            <TableColumn prefWidth="76.0" text="Heure" />
-            <TableColumn prefWidth="129.0" text="Nombre de Visiteurs" />
+            <TableColumn fx:id="dateCol" prefWidth="63.0" text="Date" />
+          <TableColumn fx:id="nomCol" prefWidth="75.0" sortable="false" text="Nom" />
+          <TableColumn fx:id="prenomCol" prefWidth="75.0" text="Prénom" />
+            <TableColumn fx:id="lienCol" prefWidth="97.0" text="Lien de Parenté" />
+            <TableColumn fx:id="cinCol" prefWidth="75.0" text="CIN" />
+            <TableColumn fx:id="heureCol" prefWidth="76.0" text="Heure" />
+            <TableColumn fx:id="nbrVisiteursCol" prefWidth="129.0" text="Nombre de Visiteurs" />
         </columns>
          <columnResizePolicy>
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />

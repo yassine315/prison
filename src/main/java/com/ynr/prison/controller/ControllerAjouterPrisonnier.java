@@ -1,15 +1,21 @@
-package com.ynr.prison.controller;
+ package com.ynr.prison.controller;
 
 import java.io.File;
+import java.io.IOException;
 import java.net.URL;
+import java.nio.file.Files;
+import java.sql.Blob;
+import java.sql.SQLException;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Date;
-import java.util.List;
 import java.util.Map;
 import java.util.ResourceBundle;
 import java.util.stream.Collectors;
+
+import javax.sql.rowset.serial.SerialBlob;
+import javax.sql.rowset.serial.SerialException;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -50,7 +56,7 @@ public class ControllerAjouterPrisonnier implements Initializable {
 	private TextField inPrenom;
 	
 	@FXML
-	private TextField inAge;
+	private DatePicker inNaissance;
 	
 	@FXML
 	private TextField inPeriode;
@@ -72,7 +78,10 @@ public class ControllerAjouterPrisonnier implements Initializable {
 		String cin = inCin.getText();
 		String nom  = inNom.getText();
 		String prenom = inPrenom.getText();
-		int age = Integer.parseInt(inAge.getText());
+		LocalDate localDateN = inNaissance.getValue();
+		Instant instantN = Instant.from(localDateN.atStartOfDay(ZoneId.systemDefault()));
+		Date naissance = Date.from(instantN);
+		
 		int periode =  Integer.parseInt(inPeriode.getText());
 		
 		LocalDate localDate = inDateEntrer.getValue();
@@ -82,8 +91,25 @@ public class ControllerAjouterPrisonnier implements Initializable {
 		int nbrEtude = Integer.parseInt(inNbrEtude.getText());
 		Cause cause = causes.get(inCause.getValue());
 		
-		Prisonnier prisonnier = new Prisonnier( cin, cause, nom, prenom, age, periode,
-				dateEntrer, nbrEtude,  true);
+		//traitment d'image
+		
+		Blob blobImage = null;
+		try {
+			byte[] fileContent = Files.readAllBytes(image.toPath());
+			blobImage = new SerialBlob(fileContent);
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} catch (SerialException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		Prisonnier prisonnier = new Prisonnier( cin, cause, nom, prenom, naissance, periode,
+				dateEntrer, nbrEtude,  true, blobImage);
 			
 		try {
 		session = sessionFactory.openSession();
@@ -97,13 +123,13 @@ public class ControllerAjouterPrisonnier implements Initializable {
 		/**
 		 * notifier la reussite
 		 */
-		String title = "L'operation est effectue";
+		String title = "L'operation est effectuée";
         String message = "Votre prisonnier a été ajouté correctement";
         Notification notification = Notifications.SUCCESS;
         TrayNotification tray = new TrayNotification(title, message, notification);
         tray.showAndDismiss(new Duration(2000));
 		}catch(Exception e){
-			String title = "L'operation est échoer";
+			String title = "L'operation est échouée";
 	        String message = "Votre prisonnier n'a pas été ajouté ";
 	        Notification notification = Notifications.ERROR;
 	        TrayNotification tray = new TrayNotification(title, message, notification);
@@ -139,7 +165,7 @@ public class ControllerAjouterPrisonnier implements Initializable {
 		inCause.getItems().addAll(causes.keySet().toArray(new String[causes.size()]));
 		new ComboboxNiama<String>(inCause);
 		
-		FileChooser.ExtensionFilter imageFilter = new FileChooser.ExtensionFilter("Image Files", "*.jpg", "*.png");
+		FileChooser.ExtensionFilter imageFilter = new FileChooser.ExtensionFilter("Image Files", "*.jpg", "*.png","*.jpeg");
 		FileChooser fc = new FileChooser();
 	    fc.getExtensionFilters().add(imageFilter);
 	    

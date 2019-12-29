@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="TOP_CENTER" prefHeight="160.0" prefWidth="406.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ynr.prison.controller.ControllerAncienVisiteur">
+<VBox alignment="TOP_CENTER" prefHeight="160.0" prefWidth="406.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ynr.prison.controller.ControllerAjouterInscripetion">
    <children>
       <GridPane alignment="CENTER">
         <columnConstraints>
@@ -21,15 +21,10 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label contentDisplay="CENTER" prefHeight="16.0" prefWidth="108.0" text="Identifier le visiteur" />
+            <Label contentDisplay="CENTER" prefHeight="17.0" prefWidth="197.0" text="Identifier le Prisonnier" />
             <ComboBox fx:id="cmb" pickOnBounds="false" prefWidth="150.0" GridPane.columnIndex="1">
                <GridPane.margin>
                   <Insets bottom="2.0" />
-               </GridPane.margin></ComboBox>
-            <Label text="Nombre Visiteur" GridPane.rowIndex="1" />
-            <ComboBox fx:id="cmbN" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
-               <GridPane.margin>
-                  <Insets top="2.0" />
                </GridPane.margin></ComboBox>
          </children>
          <VBox.margin>
@@ -39,7 +34,7 @@
             <Insets left="20.0" />
          </padding>
       </GridPane>
-      <Button mnemonicParsing="false" onAction="#ajouterVisite" text="Ajouter Visite">
+      <Button mnemonicParsing="false" onAction="#ajouterInscrit" text="Nouveau Inscrit">
          <VBox.margin>
             <Insets top="20.0" />
          </VBox.margin>
