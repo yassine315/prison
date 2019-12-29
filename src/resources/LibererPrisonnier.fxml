@@ -42,7 +42,7 @@
                   <TableColumn fx:id="detenuCol" prefWidth="75.0" text="Matricule" />
                 <TableColumn fx:id="nomCol" prefWidth="75.0" text="Nom" />
                 <TableColumn fx:id="prenomCol" prefWidth="75.0" text="Prenom" />
-                  <TableColumn fx:id="ageCol" prefWidth="75.0" text="Age" />
+                  <TableColumn fx:id="ageCol" prefWidth="75.0" text="Date Naissance" />
                   <TableColumn fx:id="peroideCol" prefWidth="75.0" text="Periode" />
                   <TableColumn fx:id="dateEntrerCol" prefWidth="75.0" text="Date entrer" />
                   <TableColumn fx:id="niveauCol" prefWidth="75.0" text="Niveau Etude" />

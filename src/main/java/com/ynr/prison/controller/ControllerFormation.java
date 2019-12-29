@@ -44,8 +44,6 @@ public class ControllerFormation implements Initializable {
 	
 	SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
 	private Type typeTarget;
-<<<<<<< HEAD
-	private List<com.ynr.beans.Session> sessions;
 	
 	 @FXML
 	 private TableView<Formation> formationTable;
@@ -62,10 +60,6 @@ public class ControllerFormation implements Initializable {
 	 @FXML
 	 private Label titreFormation;
 
-=======
-
-	
->>>>>>> df5fd0750e7be7b5dbbab49db14e4a5ceaf57bda
 	
 	@FXML 
 	private Button nouvelleFormation;
