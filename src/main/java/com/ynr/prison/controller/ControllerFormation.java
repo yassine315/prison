@@ -17,6 +17,8 @@ import javafx.stage.Stage;
 
 public class ControllerFormation implements Initializable {
 	private Type typeTarget;
+
+	
 	
 	@FXML 
 	private Button nouvelleFormation;
@@ -29,6 +31,9 @@ private void ajouterFormation() {
 AnchorPane anchorPane = new AnchorPane();
 	try {
 		anchorPane = loader.load();
+		ControllerAjouterFormation cv =loader.getController();
+		cv.setTypeTargett(typeTarget);
+	
 	} catch (IOException e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();

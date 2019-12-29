@@ -43,6 +43,13 @@ public class Type {
 		this.description = description;
 		this.formations = formations;
 	}
+	public Type(String nomType, String responsableType, String description) {
+		super();
+		this.nomType = nomType;
+		this.responsableType = responsableType;
+		this.description = description;
+		this.formations = formations;
+	}
 
 	public int getIdType() {
 		return idType;

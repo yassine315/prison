@@ -36,7 +36,7 @@ public class Formation {
 	@Column(name="DUREE_FORMATION")
 	private int dureeFormation;
 				
-	@OneToMany(mappedBy="formation",cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@OneToMany(mappedBy="formation",cascade = CascadeType.ALL, fetch = FetchType.EAGER )
 	private List<Session> sessions;
 				
 	public Formation() {
@@ -62,6 +62,14 @@ public class Formation {
 		this.responsableFormation = responsableFormation;
 		this.dureeFormation = dureeFormation;
 		this.sessions = sessions;
+	}
+	public Formation(Type type, String nomFormation, String responsableFormation, int dureeFormation) {
+		super();
+		this.type = type;
+		this.nomFormation = nomFormation;
+		this.responsableFormation = responsableFormation;
+		this.dureeFormation = dureeFormation;
+
 	}
 
 	public int getId_formation() {
