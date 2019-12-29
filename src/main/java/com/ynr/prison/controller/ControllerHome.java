@@ -243,13 +243,3 @@ FXMLLoader loader = new FXMLLoader(this.getClass().getClassLoader().getResource(
 	}
 
 }
-
-
-
-
-
-
-
-
-
-

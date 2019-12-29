@@ -220,11 +220,8 @@
 {
 	-fx-background-color: #3D3D3D;
 }
-.cell:hover
-{
-	-fx-background-color: #454545;
-}
-.cell:selected
+
+.row:selected
 {
 	-fx-background-color: #F0544C;
 }

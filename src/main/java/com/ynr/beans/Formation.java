@@ -36,7 +36,7 @@ public class Formation {
 	@Column(name="DUREE_FORMATION")
 	private int dureeFormation;
 				
-	@OneToMany(mappedBy="formation",cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@OneToMany(mappedBy="formation",cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private List<Session> sessions;
 				
 	public Formation() {

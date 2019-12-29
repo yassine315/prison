@@ -1,5 +1,16 @@
 package com.ynr.prison.controller;
 
-public class ControllerAjouterFormation {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+import javafx.fxml.Initializable;
+
+public class ControllerAjouterFormation implements Initializable {
+
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		// TODO Auto-generated method stub
+		
+	}
 
 }

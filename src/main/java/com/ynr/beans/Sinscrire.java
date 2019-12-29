@@ -5,6 +5,7 @@ import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.MapsId;
 import javax.persistence.Table;
@@ -20,16 +21,20 @@ public class Sinscrire {
 	
 	@ManyToOne(fetch = FetchType.LAZY)
     @MapsId("idPrisonnier")
+    @JoinColumn(name = "MATRICULE")
     private Prisonnier prisonnier;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
     @MapsId("idSession")
+    @JoinColumn(name = "ID_SESSION")
     private Session session;
 	
 	@Column(name="ABSCENCE")
 	private int abscence;
+	
 	@Column(name="SCORE")
 	private int score;
+	
 	@Column(name="DECISION")
 	private String decision;
 	
@@ -71,6 +76,7 @@ public class Sinscrire {
 
 	public void setPrisonnier(Prisonnier prisonnier) {
 		this.prisonnier = prisonnier;
+		this.id.setIdPrisonnier(prisonnier.getMatricule());
 	}
 
 	public Session getSession() {
@@ -79,6 +85,7 @@ public class Sinscrire {
 
 	public void setSession(Session session) {
 		this.session = session;
+		this.id.setIdSession(session.getIdSession());
 	}
 
 	public Sinscrire(Prisonnier prisonnier, Session session, int abscence, int score, String decision) {
@@ -99,6 +106,15 @@ public class Sinscrire {
 		this.abscence = abscence;
 		this.score = score;
 		this.decision = decision;
+	}
+
+	
+	
+	public Sinscrire(Prisonnier prisonnier, Session session) {
+		super();
+		this.prisonnier = prisonnier;
+		this.session = session;
+		this.id = new InscriptionId(prisonnier.getMatricule(),session.getIdSession());
 	}
 
 	@Override

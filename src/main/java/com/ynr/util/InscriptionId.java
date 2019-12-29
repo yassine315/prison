@@ -10,12 +10,13 @@ public class InscriptionId implements Serializable {
 
 	private static final long serialVersionUID = 4860833063610045877L;
 	
+	@Column(name = "ID_SESSION")
+    private int idSession;
 	
 	@Column(name = "MATRICULE")
     private int idPrisonnier;
  
-    @Column(name = "ID_SESSION")
-    private int idSession;
+    
 
 	public InscriptionId(int idPrisonnier, int idSession) {
 		super();
@@ -70,6 +71,11 @@ public class InscriptionId implements Serializable {
 		if (idSession != other.idSession)
 			return false;
 		return true;
+	}
+
+	@Override
+	public String toString() {
+		return "InscriptionId [idSession=" + idSession + ", idPrisonnier=" + idPrisonnier + "]";
 	}
 	
     

@@ -39,7 +39,7 @@
                 <TableColumn fx:id="prenomCol" prefWidth="75.0" text="Prenom" />
                   <TableColumn fx:id="naissanceCol" prefWidth="75.0" text="Date de Naissance" />
                   <TableColumn fx:id="peroideCol" prefWidth="75.0" text="Periode" />
-                  <TableColumn fx:id="dateEntrerCol" prefWidth="75.0" text="Date entrer" />
+                  <TableColumn fx:id="dateEntrerCol" prefWidth="75.0" text="Date entrée" />
                   <TableColumn fx:id="niveauCol" prefWidth="75.0" text="Niveau Etude" />
                   <TableColumn fx:id="evaluationCol" prefWidth="75.0" text="Evaluation" />
                   <TableColumn fx:id="causeCol" prefWidth="75.0" text="Cause" />

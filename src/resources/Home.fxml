@@ -24,7 +24,6 @@
                      </items></Menu>
                 <Menu fx:id="menuFormation" mnemonicParsing="false" text="Formation">
                      <items>
-                        <MenuItem mnemonicParsing="false" onAction="#formationDeBase" text="Formation de base" />
                         <MenuItem mnemonicParsing="false" onAction="#description" text="Description des types" />
                         <MenuItem mnemonicParsing="false" onAction="#nouveauType" text="Nouveau type" />
                      </items></Menu>
