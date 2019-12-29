@@ -63,6 +63,17 @@ public class Session {
 		prisonnier.getSessions().add(sinscrire);
 	}
 	
+	
+	
+	public Session(Formation formation, String session, String formateur, Date dateDebut, Date dateFin) {
+		super();
+		this.formation = formation;
+		this.session = session;
+		this.formateur = formateur;
+		this.dateDebut = dateDebut;
+		this.dateFin = dateFin;
+	}
+
 	public int getIdSession() {
 		return idSession;
 	}

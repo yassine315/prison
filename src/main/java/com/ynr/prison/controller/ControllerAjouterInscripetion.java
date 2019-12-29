@@ -37,9 +37,7 @@ public class ControllerAjouterInscripetion implements Initializable {
 	@FXML
 	private void ajouterInscrit() {
 		Stage stage = (Stage)cmb.getScene().getWindow();
-		try {
-		System.out.println(sessionTarget.getPrisonniers().size());
-		String key = cmb.getValue();
+		try {		String key = cmb.getValue();
 		Prisonnier prisonnier = prisonniers.get(key);
 		Session session = sessionFactory.openSession();
 		sessionTarget.addPrisonnier(prisonnier);

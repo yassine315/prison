@@ -88,16 +88,6 @@ public class ControllerHome implements Initializable {
 		newContainer.prefWidthProperty().bind(container.widthProperty());
 	}
 	
-	@FXML
-	private void formationNSS() {
-		
-	}
-	
-	@FXML
-	private void formationProfessionnelle() {
-		
-	}
-	
 	
 	@FXML
 	private void prisonnier() {
@@ -214,8 +204,6 @@ FXMLLoader loader = new FXMLLoader(this.getClass().getClassLoader().getResource(
 		container.getChildren().add(newContainer);
 		newContainer.prefHeightProperty().bind(container.heightProperty());
 		newContainer.prefWidthProperty().bind(container.widthProperty());
-	
-		
 		
 	}
 	

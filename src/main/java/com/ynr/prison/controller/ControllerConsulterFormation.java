@@ -34,9 +34,8 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 
 public class ControllerConsulterFormation implements Initializable {
-	private SessionFactory sessionFactory;
+	
 	private Formation formation;
-	private Session sessionTarget;
 	
 	@FXML
 	private AnchorPane container;
@@ -65,19 +64,27 @@ public class ControllerConsulterFormation implements Initializable {
 	
 	@FXML
 	private void ajouterSession() {
-			FXMLLoader loader = new FXMLLoader(this.getClass().getClassLoader().getResource("AjouerSession.fxml"));
+			Stage currentStage = (Stage) sessionTable.getScene().getWindow();
+
+			FXMLLoader loader = new FXMLLoader(this.getClass().getClassLoader().getResource("AjouterSession.fxml"));
 			Region newAnchorPane= new Region();
 			try {
 				newAnchorPane=loader.load();
+				ControllerAjouterSession cas = loader.getController();
+				cas.setFormationTarget(formation);
+				cas.setSessionTable(sessionTable);;
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			
-			container.getChildren().clear();
-			container.getChildren().add(newAnchorPane);
-			newAnchorPane.prefHeightProperty().bind(container.heightProperty());
-			newAnchorPane.prefWidthProperty().bind(container.widthProperty());
+			Scene scene = new Scene(newAnchorPane);
+    		Stage stage = new Stage();
+    		stage.setScene(scene);
+    		
+    		stage.initOwner(currentStage);
+    		stage.initModality(Modality.APPLICATION_MODAL); 
+    		stage.showAndWait();
 		}
 	
 

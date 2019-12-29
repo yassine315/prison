@@ -25,7 +25,7 @@
             </Label>
          </children>
       </VBox>
-      <TableView fx:id="formationTable">
+      <TableView fx:id="formationTable" prefHeight="430.0" prefWidth="509.0">
         <columns>
           <TableColumn fx:id="nomFormationCol" prefWidth="116.0" text="Nom de formation" />
           <TableColumn fx:id="dureFormationCol" minWidth="0.0" prefWidth="166.0" text="Durée (/mois)" />
@@ -35,7 +35,7 @@
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
       </TableView>
-      <VBox alignment="CENTER">
+      <VBox alignment="CENTER" prefHeight="60.0" prefWidth="509.0">
          <children>
             <Button fx:id="nouvelleFormation" mnemonicParsing="false" onAction="#ajouterFormation" text="Nouvelle formation" />
          </children>
