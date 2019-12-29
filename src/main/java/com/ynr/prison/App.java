@@ -2,6 +2,7 @@ package com.ynr.prison;
 
 import java.io.IOException;
 
+
 import org.hibernate.SessionFactory;
 
 import com.ynr.util.HibernateUtil;
@@ -9,7 +10,9 @@ import com.ynr.util.HibernateUtil;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 /**
@@ -31,16 +34,13 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) {
-
-
-    	SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
-
     	
     	FXMLLoader loader = new FXMLLoader(this.getClass().getClassLoader().getResource("Login.fxml"));
     	AnchorPane anchorPane = new AnchorPane();
     	
     	try {
 			anchorPane = loader.load();
+			anchorPane.getStylesheets().add(getClass().getClassLoader().getResource("FlatBee.css").toString());
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -48,6 +48,8 @@ public class App extends Application {
     	
     	Scene scene = new Scene(anchorPane);
     	stage.setScene(scene);
+    	stage.setTitle(value);
+    	stage.getIcons().add(new Image(getClass().getClassLoader().getResourceAsStream("prison_logo.jpg")));
     	stage.show();
     
     }

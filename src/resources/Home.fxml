@@ -16,19 +16,18 @@
                 <Menu mnemonicParsing="false" text="Prisonnier">
                      <items>
                         <MenuItem mnemonicParsing="false" onAction="#prisonnier" text="Prisonniers" />
+                        <MenuItem mnemonicParsing="false" onAction="#ajouterPrisonnier" text="Ajouter Prisonnier" />
+                        <MenuItem mnemonicParsing="false" onAction="#libererPrisonnier" text="Liberer prisonnier" />
                      </items></Menu>
                 <Menu mnemonicParsing="false" onAction="#visite" text="Visite">
                      <items>
                         <MenuItem fx:id="consulter" mnemonicParsing="false" onAction="#visite" text="Consulter" />
                      </items></Menu>
 
-                <Menu mnemonicParsing="false" text="Formation">
+                <Menu fx:id="menuFormation" mnemonicParsing="false" text="Formation">
                      <items>
-                        <MenuItem mnemonicParsing="false" onAction="#formationBase" text="Formation de base" />
-                        <MenuItem mnemonicParsing="false" onAction="#formationProfessionnelle" text="Formation professionnelle" />
-                        <MenuItem mnemonicParsing="false" onAction="#formationNSS" text="Formation de niveau secondaire ou supérieur" />
-                        <MenuItem mnemonicParsing="false" onAction="#passageExamens" text="Passage des examens" />
-                        <MenuItem mnemonicParsing="false" onAction="#nouveauFormation" text="Nouveau type e formation" />
+                        <MenuItem mnemonicParsing="false" onAction="#description" text="Description des types" />
+                        <MenuItem mnemonicParsing="false" onAction="#nouveauType" text="Nouveau type" />
                      </items></Menu>
                   <Menu mnemonicParsing="false" onAction="#deces" text="Decés" />
               </menus>
