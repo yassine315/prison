@@ -19,7 +19,7 @@ public class User implements Serializable{
 	private static final long serialVersionUID = 8832614995220530366L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name="MOT_PASS")
 	private String password;
 	

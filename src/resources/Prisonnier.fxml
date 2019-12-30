@@ -42,7 +42,7 @@
                   <TableColumn fx:id="dateEntrerCol" prefWidth="75.0" text="Date entrée" />
                   <TableColumn fx:id="niveauCol" prefWidth="75.0" text="Niveau Etude" />
                   <TableColumn fx:id="evaluationCol" prefWidth="75.0" text="Evaluation" />
-                  <TableColumn fx:id="causeCol" prefWidth="75.0" text="Cause" />
+                  <TableColumn fx:id="causeCol" prefWidth="75.0" text="Crime" />
               </columns>
                <columnResizePolicy>
                   <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />

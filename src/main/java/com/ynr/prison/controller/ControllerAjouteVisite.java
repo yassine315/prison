@@ -60,7 +60,7 @@ public class ControllerAjouteVisite implements Initializable {
 		String cin = inCin.getText();
 		int nbrv = 1;
 		nbrv = Integer.parseInt(nbrVisiteur.getValue());
-		Visiteur visiteur=new Visiteur(nom,prenom,lien,cin);
+		Visiteur visiteur=new Visiteur(nom,prenom,cin,lien);
 		Visite newVisite = new Visite(LocalDate.now(), LocalTime.now(), prisonnier, nbrv, visiteur);
 		Session session = sessionFactory.openSession();
 		session.beginTransaction();
