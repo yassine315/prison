@@ -39,7 +39,12 @@ public class Prisonnier implements Serializable{
     @JoinColumn(name="ID_CAUSE", nullable=false)
 	private Cause cause;
 	
-	
+	@ManyToOne
+    @JoinColumn(name="ID_CATEGORIE", nullable=false)
+	private Categorie categorie;
+	@ManyToOne
+    @JoinColumn(name="ID_CELLULE", nullable=false)
+	private Cellule cellule;
 	@OneToMany(mappedBy="prisonnier",cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	private List<Visite> visites;
 	
@@ -74,7 +79,7 @@ public class Prisonnier implements Serializable{
 	private List<Sinscrire> sessions;  
 	
 	public Prisonnier(String cinPrisonnier, Cause cause, String nom, String prenom, Date dateNaissance, int periode,
-			Date dateEntrer, int niveauEtude, boolean detenu, Blob blobImage) {
+			Date dateEntrer, int niveauEtude, boolean detenu, Blob blobImage,Categorie categorie, Cellule cellule ) {
 		super();
 		this.cinPrisonnier = cinPrisonnier;
 		this.cause = cause;
@@ -86,12 +91,14 @@ public class Prisonnier implements Serializable{
 		this.niveauEtude = niveauEtude;
 		this.detenu = detenu;
 		this.photo = blobImage;
+		this.categorie=categorie;
+		this.cellule=cellule;
 	}
 
 
 
 	public Prisonnier(String cinPrisonnier, Cause cause, String nom, String prenom, Date dateNaissance, int periode,
-			Date dateEntrer, int niveauEtude, int evaluation, boolean detenu) {
+			Date dateEntrer, int niveauEtude, int evaluation, boolean detenu, Categorie categorie, Cellule cellule) {
 		super();
 		this.cinPrisonnier = cinPrisonnier;
 		this.cause = cause;
@@ -103,6 +110,8 @@ public class Prisonnier implements Serializable{
 		this.niveauEtude = niveauEtude;
 		this.evaluation = evaluation;
 		this.detenu = detenu;
+		this.categorie=categorie;
+		this.cellule=cellule;
 	}
 	
 	
@@ -187,6 +196,20 @@ public class Prisonnier implements Serializable{
 
 	public void setCause(Cause cause) {
 		this.cause = cause;
+	}
+	public Cellule getCellule() {
+		return cellule;
+	}
+
+	public void setCellule(Cellule cellule) {
+		this.cellule = cellule;
+	}
+	public Categorie getCategorie() {
+		return categorie;
+	}
+
+	public void setCategorie(Categorie categorie) {
+		this.categorie = categorie;
 	}
 
 	public int getNiveauEtude() {

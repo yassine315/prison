@@ -238,6 +238,25 @@ FXMLLoader loader = new FXMLLoader(this.getClass().getClassLoader().getResource(
 		newContainer.prefHeightProperty().bind(container.heightProperty());
 		newContainer.prefWidthProperty().bind(container.widthProperty());
 	}
+	@FXML
+	private void consulterCel() {
+		FXMLLoader loader = new FXMLLoader(this.getClass().getClassLoader().getResource("ConsulterCellule.fxml"));
+		Region newContainer = new Region();
+		
+		try {
+			newContainer = (Region) loader.load();
+			newContainer.getStylesheets().add(getClass().getClassLoader().getResource("FlatBee.css").toString());
+
+		}
+		catch (IOException e){
+			e.printStackTrace();
+		}
+		container.getChildren().clear();
+		container.getChildren().add(newContainer);
+		newContainer.prefHeightProperty().bind(container.heightProperty());
+		newContainer.prefWidthProperty().bind(container.widthProperty());
+	}
+	
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {

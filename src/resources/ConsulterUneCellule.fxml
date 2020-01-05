@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ynr.prison.controller.ControllerConsulterUneCellule">
+   <children>
+      <VBox alignment="CENTER" prefHeight="65.0" prefWidth="733.0">
+         <children>
+            <Label fx:id="nomCellule" alignment="BASELINE_LEFT" prefHeight="30.0" prefWidth="225.0" textFill="#d02d2d">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets left="50.0" />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Label>
+         </children>
+      </VBox>
+      <TableView fx:id="prisonnierTable" prefHeight="367.0" prefWidth="733.0">
+        <columns>
+          <TableColumn fx:id="matriculeCol" prefWidth="116.0" text="Matricule" />
+          <TableColumn fx:id="nomCol" minWidth="0.0" prefWidth="166.0" text="Nom" />
+            <TableColumn fx:id="prenomCol" minWidth="0.0" prefWidth="225.0" text="Prenom" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+   </children>
+</VBox>

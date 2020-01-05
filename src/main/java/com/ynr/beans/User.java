@@ -4,10 +4,9 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
 
 @Entity
 @Table(name="utilisateur")
@@ -17,9 +16,10 @@ public class User implements Serializable{
 	 * 
 	 */
 	private static final long serialVersionUID = 8832614995220530366L;
+	
+	@Column(name="LOGIN")
+	private String login;
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name="MOT_PASS")
 	private String password;
 	
@@ -28,12 +28,10 @@ public class User implements Serializable{
 	
 	@Column(name="PRENOM")
 	private String prenom;
-	
+	@Id
 	@Column(name="EMAIL")
 	private String email;
 	
-	@Column(name="LOGIN")
-	private String login;	
 
 	public User(String nom, String prenom, String email, String login, String password) {
 		super();

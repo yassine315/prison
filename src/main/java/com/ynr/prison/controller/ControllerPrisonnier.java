@@ -82,6 +82,10 @@ public class ControllerPrisonnier implements Initializable {
 	
 	@FXML
 	private TableColumn<Prisonnier,String> causeCol;
+	@FXML
+	private TableColumn<Prisonnier,String> categorieCol;
+	@FXML
+	private TableColumn<Prisonnier,String> celluleCol;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -107,13 +111,14 @@ public class ControllerPrisonnier implements Initializable {
 		nomCol.setCellValueFactory(new PropertyValueFactory<>("nom"));
 		prenomCol.setCellValueFactory(new PropertyValueFactory<>("prenom"));
 		naissanceCol.setCellValueFactory(p ->new ReadOnlyStringWrapper(new SimpleDateFormat("dd/MM/yyyy").format(p.getValue().getdateNaissance())));
-
 		peroideCol.setCellValueFactory(new PropertyValueFactory<>("periode"));
 		dateEntrerCol.setCellValueFactory(p ->new ReadOnlyStringWrapper(new SimpleDateFormat("dd/MM/yyyy").format(p.getValue().getDateEntrer())));
 		niveauCol.setCellValueFactory(new PropertyValueFactory<>("niveauEtude"));
 		evaluationCol.setCellValueFactory(new PropertyValueFactory<>("evaluation"));
 		detenuCol.setCellValueFactory(new PropertyValueFactory<>("matricule"));
 		causeCol.setCellValueFactory(p -> new ReadOnlyStringWrapper(p.getValue().getCause().getNom()));
+		categorieCol.setCellValueFactory(p -> new ReadOnlyStringWrapper(p.getValue().getCategorie().getNom()));
+		celluleCol.setCellValueFactory(p -> new ReadOnlyStringWrapper(p.getValue().getCellule().getNom()));
 		
 		prisonnierTable.setRowFactory(tv -> {
 		    TableRow<Prisonnier> row = new TableRow<>();

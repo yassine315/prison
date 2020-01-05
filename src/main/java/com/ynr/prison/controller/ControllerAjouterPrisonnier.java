@@ -20,7 +20,9 @@ import javax.sql.rowset.serial.SerialException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
+import com.ynr.beans.Categorie;
 import com.ynr.beans.Cause;
+import com.ynr.beans.Cellule;
 import com.ynr.beans.Prisonnier;
 import com.ynr.prison.nitification.Notification;
 import com.ynr.prison.nitification.Notifications;
@@ -45,7 +47,8 @@ public class ControllerAjouterPrisonnier implements Initializable {
 	private SessionFactory sessionFactory;
 	private Session session;
 	private Map<String, Cause> causes;
-	
+	private Map<String, Categorie> categories;
+	private Map<String, Cellule> cellules;
 	@FXML
 	private TextField inCin;
 	
@@ -69,6 +72,10 @@ public class ControllerAjouterPrisonnier implements Initializable {
 	
 	@FXML
 	private ComboBox<String> inCause;
+	@FXML
+	private ComboBox<String> inCategorie;
+	@FXML
+	private ComboBox<String> inCellule;
 	
 	@FXML
 	private Button addImage;
@@ -90,6 +97,9 @@ public class ControllerAjouterPrisonnier implements Initializable {
 		
 		int nbrEtude = Integer.parseInt(inNbrEtude.getText());
 		Cause cause = causes.get(inCause.getValue());
+		Categorie categorie= categories.get(inCategorie.getValue());
+		Cellule cellule= cellules.get(inCellule.getValue());
+		
 		
 		//traitment d'image
 		
@@ -109,7 +119,7 @@ public class ControllerAjouterPrisonnier implements Initializable {
 		}
 		
 		Prisonnier prisonnier = new Prisonnier( cin, cause, nom, prenom, naissance, periode,
-				dateEntrer, nbrEtude,  true, blobImage);
+				dateEntrer, nbrEtude,  true, blobImage, categorie, cellule);
 			
 		try {
 		session = sessionFactory.openSession();
@@ -156,6 +166,8 @@ public class ControllerAjouterPrisonnier implements Initializable {
 		session = sessionFactory.openSession();
 		session.beginTransaction();
 		causes = session.createQuery("FROM Cause", Cause.class).getResultList().stream().collect(Collectors.toMap(Cause::getNom, e ->e ));
+		categories = session.createQuery("FROM Categorie", Categorie.class).getResultList().stream().collect(Collectors.toMap(Categorie::getNom, e ->e ));
+		cellules = session.createQuery("FROM Cellule", Cellule.class).getResultList().stream().collect(Collectors.toMap(Cellule::getNom, e ->e ));
 		session.getTransaction().commit();
 		
 		/**
@@ -164,6 +176,12 @@ public class ControllerAjouterPrisonnier implements Initializable {
 		inCause.setTooltip(new Tooltip());
 		inCause.getItems().addAll(causes.keySet().toArray(new String[causes.size()]));
 		new ComboboxNiama<String>(inCause);
+		inCategorie.setTooltip(new Tooltip());
+		inCategorie.getItems().addAll(categories.keySet().toArray(new String[categories.size()]));
+		new ComboboxNiama<String>(inCategorie);
+		inCellule.setTooltip(new Tooltip());
+		inCellule.getItems().addAll(cellules.keySet().toArray(new String[cellules.size()]));
+		new ComboboxNiama<String>(inCellule);
 		
 		FileChooser.ExtensionFilter imageFilter = new FileChooser.ExtensionFilter("Image Files", "*.jpg", "*.png","*.jpeg");
 		FileChooser fc = new FileChooser();

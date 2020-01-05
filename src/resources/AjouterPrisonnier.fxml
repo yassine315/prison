@@ -13,9 +13,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="anchorPaneAV" prefHeight="515.0" prefWidth="449.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ynr.prison.controller.ControllerAjouterPrisonnier">
+<AnchorPane fx:id="anchorPaneAV" prefHeight="706.0" prefWidth="449.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ynr.prison.controller.ControllerAjouterPrisonnier">
    <children>
-      <VBox prefHeight="489.0" prefWidth="449.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <VBox prefHeight="656.0" prefWidth="449.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <AnchorPane fx:id="AjouterPrisonnier" prefHeight="108.0" prefWidth="449.0">
                <children>
@@ -26,7 +26,7 @@
                   </Label>
                </children>
             </AnchorPane>
-            <GridPane prefHeight="516.0" prefWidth="490.0">
+            <GridPane prefHeight="606.0" prefWidth="490.0">
               <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -39,18 +39,20 @@
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
               </columnConstraints>
               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="32.0" minHeight="10.0" prefHeight="27.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="70.0" minHeight="10.0" prefHeight="70.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="33.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="33.0" minHeight="10.0" prefHeight="32.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="25.0" minHeight="10.0" prefHeight="23.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
                   <TextField fx:id="inCin" alignment="TOP_LEFT" GridPane.columnIndex="5" GridPane.columnSpan="3" />
@@ -63,14 +65,14 @@
                   <TextField fx:id="inPeriode" prefHeight="25.0" prefWidth="85.0" GridPane.columnIndex="5" GridPane.columnSpan="3" GridPane.rowIndex="4" />
                   <Label ellipsisString="yaaeae" text="Date entrée" wrapText="true" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="5" />
                   <Label prefHeight="17.0" prefWidth="158.0" text="Nombre années étudiés" wrapText="true" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="6" />
-                  <Button cancelButton="true" mnemonicParsing="false" onAction="#annuller" prefHeight="25.0" prefWidth="86.0" text="Annuller" GridPane.columnIndex="5" GridPane.columnSpan="2" GridPane.halignment="RIGHT" GridPane.rowIndex="10" GridPane.valignment="TOP">
+                  <Button cancelButton="true" mnemonicParsing="false" onAction="#annuller" prefHeight="25.0" prefWidth="86.0" text="Annuller" GridPane.columnIndex="5" GridPane.columnSpan="2" GridPane.halignment="RIGHT" GridPane.rowIndex="12" GridPane.valignment="TOP">
                    
                   </Button>
-                  <Button contentDisplay="CENTER" defaultButton="true" mnemonicParsing="false" onAction="#ajouterPrisonnier" prefHeight="25.0" prefWidth="82.0" text="Ajouter" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.halignment="RIGHT" GridPane.rowIndex="10" GridPane.valignment="TOP" />
+                  <Button contentDisplay="CENTER" defaultButton="true" mnemonicParsing="false" onAction="#ajouterPrisonnier" prefHeight="25.0" prefWidth="82.0" text="Ajouter" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.halignment="RIGHT" GridPane.rowIndex="12" GridPane.valignment="TOP" />
                   <Label ellipsisString="yaaeae" layoutX="10.0" layoutY="10.0" text="Crime" wrapText="true" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="7" />
-                  <Label ellipsisString="yaaeae" layoutX="10.0" layoutY="27.0" text="Photo" wrapText="true" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="8" />
+                  <Label ellipsisString="yaaeae" layoutX="10.0" layoutY="27.0" text="Photo" wrapText="true" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="10" />
                   <TextField fx:id="inNbrEtude" GridPane.columnIndex="5" GridPane.columnSpan="3" GridPane.rowIndex="6" />
-                  <Button fx:id="addImage" mnemonicParsing="false" prefHeight="25.0" prefWidth="143.0" text="ajouter une photo" GridPane.columnIndex="5" GridPane.columnSpan="3" GridPane.rowIndex="8" />
+                  <Button fx:id="addImage" mnemonicParsing="false" prefHeight="25.0" prefWidth="143.0" text="ajouter une photo" GridPane.columnIndex="5" GridPane.columnSpan="3" GridPane.rowIndex="10" />
                   <DatePicker fx:id="inDateEntrer" editable="false" GridPane.columnIndex="5" GridPane.columnSpan="3" GridPane.rowIndex="5" />
                   <ComboBox fx:id="inCause" prefWidth="150.0" GridPane.columnIndex="5" GridPane.columnSpan="3" GridPane.rowIndex="7">
                      <opaqueInsets>
@@ -81,6 +83,18 @@
                      </GridPane.margin></ComboBox>
                   <Label text="CIN" GridPane.columnIndex="1" />
                   <DatePicker fx:id="inNaissance" editable="false" GridPane.columnIndex="5" GridPane.columnSpan="3" GridPane.rowIndex="3" />
+                  <Label ellipsisString="yaaeae" layoutX="59.0" layoutY="237.0" text="Catégorie" wrapText="true" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="8" />
+                  <ComboBox fx:id="inCategorie" layoutX="259.0" layoutY="231.0" prefWidth="150.0" GridPane.columnIndex="5" GridPane.columnSpan="3" GridPane.rowIndex="8">
+                     <opaqueInsets>
+                        <Insets bottom="5.0" top="5.0" />
+                     </opaqueInsets>
+                  </ComboBox>
+                  <ComboBox fx:id="inCellule" layoutX="259.0" layoutY="407.0" prefWidth="150.0" GridPane.columnIndex="5" GridPane.columnSpan="3" GridPane.rowIndex="9">
+                     <opaqueInsets>
+                        <Insets bottom="5.0" top="5.0" />
+                     </opaqueInsets>
+                  </ComboBox>
+                  <Label ellipsisString="yaaeae" layoutX="59.0" layoutY="378.0" text="Cellule" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="9" />
                </children>
             </GridPane>
          </children>

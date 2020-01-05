@@ -37,6 +37,10 @@
                      <items>
                         <MenuItem mnemonicParsing="false" onAction="#users" text="Consulter" />
                      </items></Menu>
+                      <Menu mnemonicParsing="false" onAction="#consulterCel" text="Cellules">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#consulterCel" text="Consulter" />
+                     </items></Menu>
               </menus>
             </MenuBar>
           <AnchorPane fx:id="container" prefWidth="269.0" VBox.vgrow="ALWAYS" />

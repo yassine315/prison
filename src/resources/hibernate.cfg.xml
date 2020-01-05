@@ -52,6 +52,8 @@
       
       <mapping class="com.ynr.beans.Prisonnier" />
       <mapping class="com.ynr.beans.Cause" />
+      <mapping class="com.ynr.beans.Categorie" />
+       <mapping class="com.ynr.beans.Cellule" />
       <mapping class="com.ynr.beans.Visite"/>
       <mapping class="com.ynr.beans.Visiteur"/>
       <mapping class="com.ynr.beans.User"/>

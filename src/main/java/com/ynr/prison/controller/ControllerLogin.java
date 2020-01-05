@@ -47,16 +47,17 @@ public class ControllerLogin implements Initializable {
 	
 	@FXML
 	private void sauthentifier() {
-		String login = new String();
-		login = userName.getText();
+		String email = new String();
+		email = userName.getText();
 		String motPass = password.getText();
 		
 		Session session = sessionFactory.openSession();
 		session.beginTransaction();
-		User userPrison = session.find(User.class, motPass);
+		User userPrison = session.find(User.class, email);
 		session.getTransaction().commit();
 		session.close();
-		if(userPrison.getLogin().equals(login)) {
+
+		if(userPrison.getPassword().equals(motPass)) {
 			
 			scene = anchorPane.getScene(); 
 			primaryStage = (Stage)scene.getWindow();
