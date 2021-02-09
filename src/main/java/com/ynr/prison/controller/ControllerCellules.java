@@ -90,7 +90,6 @@ public class ControllerCellules implements Initializable{
 		 session.beginTransaction();
 		 ObservableList<Cellule> observableList = FXCollections.observableList( session.createQuery("FROM Cellule", Cellule.class).getResultList());
 		 session.getTransaction().commit();
-		 session.close();
 	nomCol.setCellValueFactory(new PropertyValueFactory<>("nom"));
 	typeCol.setCellValueFactory(new PropertyValueFactory<>("type"));
 

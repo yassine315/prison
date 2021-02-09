@@ -43,7 +43,7 @@ public class Prisonnier implements Serializable{
     @JoinColumn(name="ID_CATEGORIE", nullable=false)
 	private Categorie categorie;
 	@ManyToOne
-    @JoinColumn(name="ID_CELLULE", nullable=false)
+    @JoinColumn(name="ID_CELLULE")
 	private Cellule cellule;
 	@OneToMany(mappedBy="prisonnier",cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	private List<Visite> visites;

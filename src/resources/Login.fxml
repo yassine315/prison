@@ -41,7 +41,7 @@
                   </Label>
                </children>
             </TilePane>
-            <Label text="Nom Utilisateur :" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label text="Email :" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <TextField fx:id="userName" GridPane.columnIndex="2" GridPane.rowIndex="2" />
             <Label text="Mot de pass :" GridPane.columnIndex="1" GridPane.rowIndex="3" />
             <PasswordField fx:id="password" GridPane.columnIndex="2" GridPane.rowIndex="3" />

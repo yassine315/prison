@@ -18,7 +18,7 @@
          <children>
             <VBox alignment="CENTER" prefHeight="83.0" prefWidth="507.0">
                <children>
-                  <Label alignment="CENTER" text="Ajouter une session" textFill="#b27836">
+                  <Label alignment="CENTER" text="Ajouter un décès" textFill="#b27836">
                      <font>
                         <Font name="System Bold" size="22.0" />
                      </font>

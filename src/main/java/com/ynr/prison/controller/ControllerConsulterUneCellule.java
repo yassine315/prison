@@ -11,6 +11,7 @@ import com.ynr.beans.Prisonnier;
 import com.ynr.util.HibernateUtil;
 
 import javafx.application.Platform;
+import javafx.beans.property.ReadOnlyStringWrapper;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -24,13 +25,12 @@ import javafx.scene.control.cell.PropertyValueFactory;
 public class ControllerConsulterUneCellule implements Initializable {
 	
 	private Cellule cellule;
-	private Prisonnier prisonnier;
-	
+
 	@FXML
 	private Label nomCellule;
 	
 	@FXML
-	private TableView<Prisonnier> celluleTable;
+	private TableView<Prisonnier> prisonnierTable;
 	
 	@FXML
 	private TableColumn<Prisonnier, String> matriculeCol;
@@ -48,18 +48,13 @@ public class ControllerConsulterUneCellule implements Initializable {
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
 		Platform.runLater(()->{
-			nomCellule.setText(cellule.getNom());
 			SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
-			 
-			 Session session = sessionFactory.openSession();
-			 session.beginTransaction();
-			 ObservableList<Prisonnier> observableList = FXCollections.observableList(cellule.getPrisonniers());
-			 session.getTransaction().commit();
-			 session.close();
-			matriculeCol.setCellValueFactory(new PropertyValueFactory<>("matricule"));
-			nomCol.setCellValueFactory(new PropertyValueFactory<>("nom"));
-			prenomCol.setCellValueFactory(new PropertyValueFactory<>("prénom"));			
-			celluleTable.setItems(observableList);
+			nomCellule.setText(cellule.getNom());
+			matriculeCol.setCellValueFactory(p -> new ReadOnlyStringWrapper(""+p.getValue().getMatricule()));
+			nomCol.setCellValueFactory(p -> new ReadOnlyStringWrapper(p.getValue().getNom()));
+			prenomCol.setCellValueFactory(p -> new ReadOnlyStringWrapper(p.getValue().getPrenom()));
+			ObservableList<Prisonnier> observableList = FXCollections.observableList(cellule.getPrisonniers());
+			prisonnierTable.setItems(observableList);
 			
 		});
 		

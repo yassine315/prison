@@ -31,7 +31,6 @@ public class Cellule implements Serializable {
 	private String type;
 	
 	@OneToMany(mappedBy="cellule",cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	
 	private List<Prisonnier> prisonniers;
 
 	public Cellule() {
@@ -44,13 +43,6 @@ public class Cellule implements Serializable {
 		this.type = type;
 	}
 
-	public Cellule(int idCellule, String nom, String type) {
-		super();
-		this.idCellule = idCellule;
-		this.nom = nom;
-		this.type=type;
-		
-	}
 
 	public List<Prisonnier> getPrisonniers() {
 		return prisonniers;

@@ -3,6 +3,7 @@ package com.ynr.prison;
 import java.io.IOException;
 
 
+
 import org.hibernate.SessionFactory;
 
 import com.ynr.util.HibernateUtil;
@@ -56,6 +57,7 @@ public class App extends Application {
 
     public static void main(String[] args) {
         launch();
+    
     }
 
 }
